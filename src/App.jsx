@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from './Components/Home'
 import Navigationbar from "./pages/Navigationbar";
@@ -31,8 +31,6 @@ function App() {
           <Route path="/person/:id"  Component={Person} />
           <Route path="/detailed_service/:id"  Component={DetailedService} />
           <Route path="/newsDetails/:id"  Component={NewsDetails} />
-          
-
         </Routes>
         <Footer />
       </Router>
