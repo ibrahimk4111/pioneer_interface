@@ -75,7 +75,7 @@ const ServicePage = () => {
         >
 
           {services.map((service, index) => (
-            <SwiperSlide className="py-10 px-3" ><Service key={index} service={service} index={index} /></SwiperSlide>
+            <SwiperSlide key={index} className="py-10 px-3" ><Service key={index} service={service} index={index} /></SwiperSlide>
           ))}
 
         </Swiper>

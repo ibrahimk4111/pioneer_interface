@@ -60,7 +60,7 @@ const AttorneyPage = () => {
           className=" w-[80%]"
         >
         {attorneys.map((attorney, index) => (
-          <SwiperSlide className=" p-10 "><Attorney key={index} attorney={attorney} index={index} /></SwiperSlide>
+          <SwiperSlide key={index} className=" p-10 "><Attorney key={index} attorney={attorney} index={index} /></SwiperSlide>
         ))}
       </Swiper>
 
