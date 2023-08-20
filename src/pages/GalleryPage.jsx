@@ -6,14 +6,15 @@ const GalleryPage = () => {
   const [images, setImages] = useState([])
 
   useEffect(()=>{
+    const getImages = async () =>{
+      const response = await fetch('https://pioneer.kodbel.com/api/imagesForGallery/')
+      const data = await response.json()
+      setImages(data)
+    }
     getImages()
   }, [])
 
-  const getImages = async () =>{
-    const response = await fetch('https://pioneer.kodbel.com/api/imagesForGallery/')
-    const data = await response.json()
-    setImages(data)
-  }
+  
 
   return (
     <div className=' p-5'>

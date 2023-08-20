@@ -26,7 +26,7 @@ const NavBar = () => {
 
             <Link to='/services' className=" hover:text-[#99272D] uppercase font-semibold">Services</Link>
 
-            <Link to='/attorneys' className=" hover:text-[#99272D] uppercase font-semibold">Attorneys</Link>
+            {/* <Link to='/attorneys' className=" hover:text-[#99272D] uppercase font-semibold">Attorneys</Link> */}
 
             <Link to='/news' className=" hover:text-[#99272D] uppercase font-semibold">News</Link>
 

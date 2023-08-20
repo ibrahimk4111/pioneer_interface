@@ -26,7 +26,7 @@ const Gallery = ({ img, index, images }) => {
                 modal ? (
                     <ImageView toggleModal={toggleModal} images={images} imgSrcId={imgSrcId} />) :
                     (<div className='relative flex flex-col items-center justify-end group'>
-                        <img onClick={toggleModal} id={index} className='cursor-pointer hover:opacity-80 object-cover transition ease-in-out duration-200' src={`http://127.0.0.1:8000/${img.img}`} alt="..." />
+                        <img onClick={toggleModal} id={index} className='cursor-pointer hover:opacity-80 object-cover transition ease-in-out duration-200' src={`https://pioneer.kodbel.com${img.img}`} alt="..." />
                         <div className=' absolute flex items-center justify-center text-white opacity-0 group-hover:opacity-100 w-full bg-slate-400'>
                             <h2 className='md:text-base text-xs line-clamp-2'>{img.title}</h2>
                         </div>

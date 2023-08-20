@@ -23,7 +23,7 @@ const NewsDetails = () => {
 
       <div className=' flex flex-col md:flex-row justify-start gap-10 h-auto'>
         <div className='overflow-hidden flex justify-center items-center md:w-auto '>
-          <img className=" object-cover md:h-60 h-40 duration-300 hover:scale-110" src={`http://127.0.0.1:8000/${news.img}`} alt='...' />
+          <img className=" object-cover md:h-60 h-40 duration-300 hover:scale-110" src={`https://pioneer.kodbel.com${news.img}`} alt='...' />
         </div>
 
         <div className=" flex flex-col space-y-3 border-l-2 border-slate-400 px-5 md:w-[70%] w-full">
