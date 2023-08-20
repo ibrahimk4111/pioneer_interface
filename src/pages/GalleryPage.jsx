@@ -10,7 +10,7 @@ const GalleryPage = () => {
   }, [])
 
   const getImages = async () =>{
-    const response = await fetch('http://127.0.0.1:8000/api/imagesForGallery/')
+    const response = await fetch('https://pioneer.kodbel.com/api/imagesForGallery/')
     const data = await response.json()
     setImages(data)
   }

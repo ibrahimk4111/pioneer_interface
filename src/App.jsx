@@ -9,7 +9,6 @@ import ContactPage from "./pages/ContactPage";
 import NewsPage from "./pages/NewsPage";
 import GalleryPage from "./pages/GalleryPage";
 import AppointmentPage from "./pages/AppointmentPage";
-import Person from "./Components/Attorney/Person";
 import DetailedService from "./Components/Service/DetailedService";
 import NewsDetails from "./Components/News/NewsDetails";
 
@@ -28,7 +27,6 @@ function App() {
           <Route path="/news"  Component={NewsPage} />
           <Route path="/gallery"  Component={GalleryPage} />
           <Route path="/appointment"  Component={AppointmentPage} />
-          <Route path="/person/:id"  Component={Person} />
           <Route path="/detailed_service/:id"  Component={DetailedService} />
           <Route path="/newsDetails/:id"  Component={NewsDetails} />
         </Routes>

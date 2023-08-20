@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         "gray-light": "var(--gray-light)",
+        "bg-attorney": "var(--bg-attorney)"
       },
     },
   },

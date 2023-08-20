@@ -12,7 +12,7 @@ const AttorneyFullPage = () => {
   }, [])
 
   const getAttorneys = async () => {
-    const response = await fetch('http://127.0.0.1:8000/api/attorney/');
+    const response = await fetch('https://pioneer.kodbel.com/api/attorney/');
     const data = await response.json();
     setAttorneys(data);
   }

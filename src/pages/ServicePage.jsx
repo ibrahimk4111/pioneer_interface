@@ -27,7 +27,7 @@ const ServicePage = () => {
   }, [])
 
   const getServices = async () => {
-    const response = await fetch('http://127.0.0.1:8000/api/service/')
+    const response = await fetch('https://pioneer.kodbel.com/api/service/')
     const data = await response.json()
     setServices(data)
   }
@@ -41,7 +41,6 @@ const ServicePage = () => {
       </div>
 
       <div className="flex justify-between items-center">
-
         <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div>
         <Swiper
 
@@ -55,7 +54,6 @@ const ServicePage = () => {
           // install Swiper modules
           modules={[Pagination, A11y, Navigation, FreeMode]}
           freeMode={true}
-          spaceBetween={50}
           grabCursor={true}
           pagination={{ clickable: true }}
           breakpoints={{
@@ -64,18 +62,22 @@ const ServicePage = () => {
             },
             640:{
               slidesPerView: 2,
+              spaceBetween: 10
             },
             768: {
               slidesPerView: 3, 
+              spaceBetween: 5
             },
             1280:{
-              slidesPerView: 4,
+              slidesPerView: 3,
+              spaceBetween: 3
             }
           }}
+          className="md:h-[550px] h-[420px]"
         >
 
           {services.map((service, index) => (
-            <SwiperSlide key={index} className="py-10 px-3" ><Service key={index} service={service} index={index} /></SwiperSlide>
+            <SwiperSlide key={index} className=""><Service key={index} service={service} index={index} /></SwiperSlide>
           ))}
 
         </Swiper>

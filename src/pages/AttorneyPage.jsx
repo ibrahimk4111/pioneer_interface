@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Attorney from "../Components/Attorney/Attorney";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import {FcPrevious, FcNext} from 'react-icons/fc'
 
@@ -24,14 +24,15 @@ const AttorneyPage = () => {
   const [attorneys, setAttorneys] = useState([])
 
   useEffect(() => {
+    const getAttorneys = async () => {
+      const response = await fetch('https://pioneer.kodbel.com/api/attorney/');
+      const data = await response.json();
+      setAttorneys(data);
+    }
     getAttorneys();
   }, [])
 
-  const getAttorneys = async () => {
-    const response = await fetch('http://127.0.0.1:8000/api/attorney/');
-    const data = await response.json();
-    setAttorneys(data);
-  }
+  
 
   return (
     <div className="py-10">
@@ -48,8 +49,8 @@ const AttorneyPage = () => {
       <Swiper
           // install Swiper modules
           modules={[Pagination, A11y, Navigation]}
-          spaceBetween={50}
-          slidesPerView={2}
+          spaceBetween={10}
+          slidesPerView={1}
           onInit={(swiper)=>{
             swiper.params.navigation.prevEl = prevRef.current
             swiper.params.navigation.nextEl = nextRef.current
@@ -57,24 +58,24 @@ const AttorneyPage = () => {
             swiper.navigation.update()
           }}
           pagination={{ clickable: true }}
-          className=" w-[80%]"
         >
         {attorneys.map((attorney, index) => (
-          <SwiperSlide key={index} className=" p-10 "><Attorney key={index} attorney={attorney} index={index} /></SwiperSlide>
+          <SwiperSlide key={index} className=" py-10 px-2"><Attorney key={index} attorney={attorney} index={index} /></SwiperSlide>
         ))}
       </Swiper>
 
       <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div>
+
       </div>
 
       {/* See more */}
-      <div className="flex justify-center items-center mt-5">
+      {/* <div className="flex justify-center items-center mt-5">
         <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-[#B99671] hover:bg-[#B99671] bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
           <Link to="/attorneys" className="p-1 md:text-xl text-sm uppercase">
             See more
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

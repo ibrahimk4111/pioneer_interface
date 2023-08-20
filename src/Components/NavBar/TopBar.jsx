@@ -15,7 +15,7 @@ const TopBar = () => {
           {/* Phone Call  */}
           <div className="flex items-center text-slate-600">
             <BiPhoneCall size={20} />
-            <Link to="/" className="px-1 md:px-3 text-[50%]">01711-108120 </Link>
+            <Link to="/" className="px-1 md:px-3 ">01711-108120 </Link>
           </div>
 
           {/* Email  */}

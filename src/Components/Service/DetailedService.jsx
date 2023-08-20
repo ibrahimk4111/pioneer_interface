@@ -8,21 +8,23 @@ const DetailedService = () => {
   const { id } = useParams()
 
   useEffect(() => {
-    getService()
-  }, [])
+    const getService = async () => {
+      const response = await fetch(`https://pioneer.kodbel.com/api/service/${id}/`)
+      const data = await response.json()
+      setSingleService(data)
+    }
 
-  const getService = async () => {
-    const response = await fetch(`http://127.0.0.1:8000/api/service/${id}/`)
-    const data = await response.json()
-    setSingleService(data)
-  }
+    getService()
+  }, [id])
+
+  
 
   return (
     <div className="w-full mx-auto h-auto md:py-10 py-5">
 
       <div className=' flex flex-col md:flex-row justify-start gap-10 h-auto'>
         <div className='overflow-hidden flex justify-center items-center md:w-auto '>
-          <img className=" object-cover md:h-60 h-40 duration-300 hover:scale-110" src={`http://127.0.0.1:8000/${singleService.img}`} alt='...' />
+          <img className=" object-cover md:h-60 h-40 duration-300 hover:scale-110" src={`https://pioneer.kodbel.com${singleService.img}`} alt='...' />
         </div>
 
         <div className=" flex flex-col space-y-3 border-l-2 border-slate-400 px-5 md:w-[70%] w-full">

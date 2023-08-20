@@ -11,7 +11,7 @@ const ServicesFullPage = () => {
   }, [])
 
   const getServices = async () => {
-    const response = await fetch('http://127.0.0.1:8000/api/service/')
+    const response = await fetch('https://pioneer.kodbel.com/api/service/')
     const data = await response.json()
     setServices(data)
   }

@@ -7,15 +7,16 @@ const NewsDetails = () => {
   const { id } = useParams()
 
   useEffect(() => {
+    const getNews = async () => {
+      const response = await fetch(`https://pioneer.kodbel.com/api/news/${id}/`)
+      const data = await response.json()
+      setNews(data)
+      console.log(data)
+    }
     getNews()
-  }, [])
+  }, [id])
 
-  const getNews = async () => {
-    const response = await fetch(`http://127.0.0.1:8000/api/news/${id}/`)
-    const data = await response.json()
-    setNews(data)
-    console.log(data)
-  }
+  
 
   return (
     <div className="w-full mx-auto h-auto md:py-10 py-5">

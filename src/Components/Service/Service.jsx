@@ -5,11 +5,11 @@ const Service = ({ service, index }) => {
 
   return (
     <Link to={`/detailed_service/${service.id}`}>
-      <div className='flex justify-center items-center shadow-xl'>
-        <div className="md:h-[450px] h-[350px] md:w-80 w-60 cursor-pointer bg-gray-light rounded-md transition duration-300 ease-in-out hover:scale-105">
+      <div className='flex justify-center items-center md:h-[500px] h-[350px]'>
+        <div className="md:h-[450px] h-[350px] md:w-80 w-60 cursor-pointer bg-gray-light rounded-md transition duration-300 ease-in-out hover:scale-105 shadow-xl">
 
-          <div className='md:h-60 h-48 overflow-hidden flex justify-center items-center rounded-t-md rounded-tr-md'>
-            <img className="object-cover" src={`http://127.0.0.1:8000/${service.img}`} alt="...." />
+          <div className='md:h-52 h-40 overflow-hidden flex justify-center items-center rounded-t-md rounded-tr-md'>
+            <img className="object-cover" src={`https://pioneer.kodbel.com${service.img}`} alt="...." />
           </div>
 
           <div className="p-5">

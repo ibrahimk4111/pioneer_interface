@@ -10,7 +10,7 @@ const NewsPage = () => {
   }, [])
 
   const getNews = async () =>{
-    const response = await fetch('http://127.0.0.1:8000/api/news/')
+    const response = await fetch('https://pioneer.kodbel.com/api/news/')
     const data = await response.json()
     setNews_and_blogs(data)
   }
