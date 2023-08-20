@@ -40,7 +40,7 @@ const ServicePage = () => {
         <hr className=" w-40 h-1 bg-slate-600 rounded"></hr>
       </div>
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center py-10">
         <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div>
         <Swiper
 
@@ -58,26 +58,26 @@ const ServicePage = () => {
           pagination={{ clickable: true }}
           breakpoints={{
             0: {
-              slidesPerView: 1,
+              slidesPerView: 1.2,
             },
             640:{
-              slidesPerView: 2,
-              spaceBetween: 10
+              slidesPerView: 2.2,
+              spaceBetween: 3
             },
             768: {
-              slidesPerView: 3, 
-              spaceBetween: 5
+              slidesPerView: 3.2, 
+              spaceBetween: 3
             },
             1280:{
-              slidesPerView: 3,
-              spaceBetween: 3
+              slidesPerView: 4.2,
+              spaceBetween: 2
             }
           }}
-          className="md:h-[550px] h-[650px]"
+          className="md:h-[480px] h-[650px]"
         >
 
           {services.map((service, index) => (
-            <SwiperSlide key={index} className=" p-2 "><Service key={index} service={service} index={index} /></SwiperSlide>
+            <SwiperSlide key={index} className=""><Service key={index} service={service} index={index} /></SwiperSlide>
           ))}
 
         </Swiper>

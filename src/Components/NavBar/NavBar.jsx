@@ -14,25 +14,30 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
+
   return (
     <>
       <div className="">
 
         <div className="px-6 py-4 flex justify-between items-center">
           <Link to="/" className=" cursor-pointer"> <img src={logo} alt="..." className="w-32" /> </Link>
-          <div className="hidden md:flex space-x-6" >
+          <div className="hidden md:flex space-x-6 " >
 
-            <Link to='/' className=" hover:text-[#99272D] uppercase font-semibold">Home</Link>
+            <Link to='/' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Home</Link>
 
-            <Link to='/services' className=" hover:text-[#99272D] uppercase font-semibold">Services</Link>
+            <Link to='/services' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Services</Link>
 
             {/* <Link to='/attorneys' className=" hover:text-[#99272D] uppercase font-semibold">Attorneys</Link> */}
 
-            <Link to='/news' className=" hover:text-[#99272D] uppercase font-semibold">News</Link>
+            <Link to='/news' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">News</Link>
 
-            <Link to='/gallery' className=" hover:text-[#99272D] uppercase font-semibold">Gallery</Link>
+            <Link to='/gallery' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Gallery</Link>
 
-            <Link to='/contact' className=" hover:text-[#99272D] uppercase font-semibold">Contact</Link>
+            <Link to='/contact' className=" p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Contact</Link>
+            {/* appointment */}
+            <Link to="/appointment" className=" uppercase p-2 bg-blue-950 rounded-md text-white">
+                Book Appointment         
+            </Link>
 
           </div>
 
@@ -41,7 +46,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className= {`md:hidden transition ease-in-out duration-1000 ${isOpen ? ' translate-x-0': ' translate-x-[100%]'}`} >
+        <div className={`md:hidden transition ease-in-out duration-1000 ${isOpen ? ' translate-x-0' : ' translate-x-[100%]'}`} >
           <div className={isOpen ? "flex flex-col gap-1 px-6 py-3" : "hidden"} >
 
             <Link onClick={toggleMenu} to='/' className=" hover:text-[#99272D] uppercase p-4 bg-slate-100 font-semibold">Home</Link>

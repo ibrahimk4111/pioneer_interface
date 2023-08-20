@@ -49,8 +49,6 @@ const AttorneyPage = () => {
       <Swiper
           // install Swiper modules
           modules={[Pagination, A11y, Navigation]}
-          spaceBetween={10}
-          slidesPerView={1}
           onInit={(swiper)=>{
             swiper.params.navigation.prevEl = prevRef.current
             swiper.params.navigation.nextEl = nextRef.current
@@ -58,6 +56,22 @@ const AttorneyPage = () => {
             swiper.navigation.update()
           }}
           pagination={{ clickable: true }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            640:{
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 1, 
+
+            },
+            1280:{
+              slidesPerView: 1.8,
+              spaceBetween: 10
+            }
+          }}
         >
         {attorneys.map((attorney, index) => (
           <SwiperSlide key={index} className=" py-10 px-2"><Attorney key={index} attorney={attorney} index={index} /></SwiperSlide>

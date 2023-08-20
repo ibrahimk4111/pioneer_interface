@@ -14,7 +14,7 @@ const ContactPage = () => {
       </div>
 
 
-      <div className="grid md:grid-cols-2 space-y-6">
+      <div className="grid md:grid-cols-2">
         <div>
           <ContactForm />
         </div>

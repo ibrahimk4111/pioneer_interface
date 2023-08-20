@@ -33,7 +33,7 @@ const ContactForm = () => {
  
 
   return (
-    <div className="p-2 flex justify-center">
+    <div className="flex justify-center">
       <form
         onSubmit={(e) => formSubmit(e)}
         className="flex flex-col items-start justify-start gap-1 w-full bg-gray-light rounded-md p-5"

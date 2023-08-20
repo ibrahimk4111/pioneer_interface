@@ -8,8 +8,12 @@ import { FiTwitter } from "react-icons/fi";
 
 const ContactAddress = () => {
   return (
-    <div className=" md:pr-10 font-semibold">
+    <div className=" md:pr-10 font-semibold bg-blue-950 text-white h-full flex justify-center items-center">
       <div className="flex flex-col gap-5 items-end">
+        <div className=" flex flex-col items-end gap-3">
+          <h2 className=" uppercase md:text-4xl text-2xl">About Law Associates</h2>
+          <p className="w-[60%] text-justify "> Our law firm is committed to providing high-quality legal services to clients in need. With years of experience and a team of skilled attorneys, we offer personalized attention and effective representation in a variety of practice areas, including family law, criminal law, business law, real estate law, and more.</p>
+        </div>
         {/* address particle */}
         <div className=" text-right tracking-widest uppercase">
           <p>70, Pioneer Road, Kakrail</p>
