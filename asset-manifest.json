@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/pioneer_interface/static/css/main.e4c89d33.css",
-    "main.js": "/pioneer_interface/static/js/main.cb2dbf48.js",
+    "main.js": "/pioneer_interface/static/js/main.72c86b54.js",
     "static/media/form.jpg": "/pioneer_interface/static/media/form.f42ecb4bc8e4c4ed24be.jpg",
     "index.html": "/pioneer_interface/index.html",
     "main.e4c89d33.css.map": "/pioneer_interface/static/css/main.e4c89d33.css.map",
-    "main.cb2dbf48.js.map": "/pioneer_interface/static/js/main.cb2dbf48.js.map"
+    "main.72c86b54.js.map": "/pioneer_interface/static/js/main.72c86b54.js.map"
   },
   "entrypoints": [
     "static/css/main.e4c89d33.css",
-    "static/js/main.cb2dbf48.js"
+    "static/js/main.72c86b54.js"
   ]
 }
