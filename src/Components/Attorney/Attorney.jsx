@@ -10,9 +10,9 @@ const Attorney = ({ attorney, index }) => {
   console.log(attorney)
 
   return (
-    <div className='flex flex-col md:flex-row md:justify-center justify-start rounded-md bg-bg-attorney md:h-auto h-screen'>
-      <div className='md:h-96 h-80 md:w-[30%] w-full overflow-hidden flex justify-center items-center md:rounded-s-md rounded-md'>
-        <img className=" object-cover h-[100%] w-auto duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${attorney.img}`} alt='...' />
+    <div className='md:h-[70vh] md:min-h-[70vh] min-h-[100vh] h-auto flex flex-col md:flex-row md:justify-center justify-start rounded-md bg-bg-attorney'>
+      <div className=' md:h-full md:w-[30%] h-[50vh] overflow-hidden flex justify-center items-center md:rounded-s-md rounded-md'>
+        <img className=" object-cover duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${attorney.img}`} alt='...' />
       </div>
 
       <div className=" md:w-[70%] w-[100%] p-5">

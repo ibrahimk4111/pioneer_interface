@@ -73,11 +73,11 @@ const ServicePage = () => {
               spaceBetween: 3
             }
           }}
-          className="md:h-[550px] h-[420px]"
+          className="md:h-[550px] h-[650px]"
         >
 
           {services.map((service, index) => (
-            <SwiperSlide key={index} className=""><Service key={index} service={service} index={index} /></SwiperSlide>
+            <SwiperSlide key={index} className=" p-2 "><Service key={index} service={service} index={index} /></SwiperSlide>
           ))}
 
         </Swiper>
