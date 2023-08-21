@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Service from "../Components/Service/Service";
 import { Link } from "react-router-dom";
 
-import {FcPrevious, FcNext} from 'react-icons/fc'
+// import {FcPrevious, FcNext} from 'react-icons/fc'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -17,8 +17,8 @@ import 'swiper/css/free-mode';
 
 
 const ServicePage = () => {
-  const prevRef = useRef()
-  const nextRef = useRef()
+  // const prevRef = useRef()
+  // const nextRef = useRef()
 
   const [services, setServices] = useState([])
 
@@ -35,45 +35,51 @@ const ServicePage = () => {
 
   return (
     <div className=" mx-auto py-10">
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="uppercase font-bold md:text-3xl sm:text-xl text-lg mb-3">Our Services</h1>
+      <div className="flex flex-col justify-center items-center font-serif">
+        <h1 className="text-lg mb-3">__ Practice Area __</h1>
+        <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide">Legal Services we do provide</h1>
         <hr className=" w-40 h-1 bg-slate-600 rounded"></hr>
       </div>
 
       <div className="flex justify-between items-center py-10">
-        <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div>
+        {/* <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div> */}
         <Swiper
 
-          onInit={(swiper) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
+          // onInit={(swiper) => {
+          //   swiper.params.navigation.prevEl = prevRef.current;
+          //   swiper.params.navigation.nextEl = nextRef.current;
+          //   swiper.navigation.init();
+          //   swiper.navigation.update();
+          // }}
 
           // install Swiper modules
           modules={[Pagination, A11y, Navigation, FreeMode]}
-          freeMode={true}
+          // freeMode={true}
           grabCursor={true}
           pagination={{ clickable: true }}
           breakpoints={{
             0: {
-              slidesPerView: 1.2,
+              slidesPerView: 1.1,
+              spaceBetween: 10
             },
             640:{
-              slidesPerView: 2.2,
-              spaceBetween: 3
+              slidesPerView: 2.1,
+              spaceBetween: 10
             },
             768: {
-              slidesPerView: 3.2, 
-              spaceBetween: 3
+              slidesPerView: 3.1, 
+              spaceBetween: 10
+            },
+            1024: {
+              slidesPerView: 3.4, 
+              spaceBetween: 10
             },
             1280:{
-              slidesPerView: 4.2,
-              spaceBetween: 2
+              slidesPerView: 4.1,
+              spaceBetween: 10
             }
           }}
-          className="md:h-[480px] h-[650px]"
+          className="md:h-[500px] h-[480px]"
         >
 
           {services.map((service, index) => (
@@ -82,7 +88,7 @@ const ServicePage = () => {
 
         </Swiper>
 
-        <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div>
+        {/* <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div> */}
       </div>
 
       {/* See more */}

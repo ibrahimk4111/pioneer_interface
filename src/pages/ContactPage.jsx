@@ -14,15 +14,13 @@ const ContactPage = () => {
       </div>
 
 
-      <div className="grid md:grid-cols-2">
-        <div>
-          <ContactForm />
-        </div>
-
+      <div className="grid md:grid-cols-2 font-sans">
         <div>
           <ContactAddress />
         </div>
-
+        <div>
+          <ContactForm />
+        </div>
       </div>
     </div>
   );

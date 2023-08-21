@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Attorney from "../Components/Attorney/Attorney";
 // import { Link } from "react-router-dom";
 
-import {FcPrevious, FcNext} from 'react-icons/fc'
+// import {FcPrevious, FcNext} from 'react-icons/fc'
 
 
 // Import Swiper React components
@@ -13,13 +13,13 @@ import { Pagination, A11y, Navigation } from 'swiper/modules';
 import 'swiper/css';
 // import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useRef } from "react";
+// import { useRef } from "react";
 // import 'swiper/css/scrollbar';
 
 
 const AttorneyPage = () => {
-  const prevRef = useRef()
-  const nextRef = useRef()
+  // const prevRef = useRef()
+  // const nextRef = useRef()
 
   const [attorneys, setAttorneys] = useState([])
 
@@ -44,17 +44,17 @@ const AttorneyPage = () => {
       </div>
       
       <div className="flex justify-between items-center">
-      <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div>
+      {/* <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div> */}
 
       <Swiper
           // install Swiper modules
           modules={[Pagination, A11y, Navigation]}
-          onInit={(swiper)=>{
-            swiper.params.navigation.prevEl = prevRef.current
-            swiper.params.navigation.nextEl = nextRef.current
-            swiper.navigation.init()
-            swiper.navigation.update()
-          }}
+          // onInit={(swiper)=>{
+          //   swiper.params.navigation.prevEl = prevRef.current
+          //   swiper.params.navigation.nextEl = nextRef.current
+          //   swiper.navigation.init()
+          //   swiper.navigation.update()
+          // }}
           pagination={{ clickable: true }}
           breakpoints={{
             0: {
@@ -78,7 +78,7 @@ const AttorneyPage = () => {
         ))}
       </Swiper>
 
-      <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div>
+      {/* <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div> */}
 
       </div>
 
