@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/pioneer_interface/static/css/main.ca78bfe0.css",
-    "main.js": "/pioneer_interface/static/js/main.b5117427.js",
+    "main.css": "/pioneer_interface/static/css/main.cbd1c334.css",
+    "main.js": "/pioneer_interface/static/js/main.e498be3a.js",
     "static/media/form.jpg": "/pioneer_interface/static/media/form.f42ecb4bc8e4c4ed24be.jpg",
+    "static/media/handsome-judge-with-gavel-sitting-courtroom_85869-8507.jpg": "/pioneer_interface/static/media/handsome-judge-with-gavel-sitting-courtroom_85869-8507.66a5f3678457871120b9.jpg",
     "index.html": "/pioneer_interface/index.html",
-    "main.ca78bfe0.css.map": "/pioneer_interface/static/css/main.ca78bfe0.css.map",
-    "main.b5117427.js.map": "/pioneer_interface/static/js/main.b5117427.js.map"
+    "main.cbd1c334.css.map": "/pioneer_interface/static/css/main.cbd1c334.css.map",
+    "main.e498be3a.js.map": "/pioneer_interface/static/js/main.e498be3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca78bfe0.css",
-    "static/js/main.b5117427.js"
+    "static/css/main.cbd1c334.css",
+    "static/js/main.e498be3a.js"
   ]
 }
