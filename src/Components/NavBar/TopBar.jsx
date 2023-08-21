@@ -38,6 +38,11 @@ const TopBar = () => {
               <FiTwitter className=" transition hover:scale-110 duration-300 ease-in-out text-white text-xl" />
             </Link>
           </div>
+
+          {/* appointment */}
+          <Link to="/appointment" className=" md:hidden px-2 py-1  bg-blue-950 border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
+                Book Appointment         
+            </Link>
         </div>
       </div>
     </div>

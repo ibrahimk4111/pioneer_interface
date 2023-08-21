@@ -6,7 +6,7 @@ const Service = ({ service, index }) => {
   return (
     <Link to={`/detailed_service/${service.id}`}>
       <div className='flex justify-center items-center py-3'>
-        <div className="md:h-[430px] h-[400px] w-80 cursor-pointer hover:bg-gray-light rounded-md transition duration-500 ease-in-out hover:scale-105 shadow-xl">
+        <div className="md:h-[430px] h-[400px] w-[95%] cursor-pointer hover:bg-gray-light rounded-md transition duration-500 ease-in-out hover:scale-105 shadow-xl">
 
           <div className='h-52 overflow-hidden flex justify-center items-center'>
             <img className="object-cover h-52 w-full" src={`https://pioneer.kodbel.com${service.img}`} alt="...." />

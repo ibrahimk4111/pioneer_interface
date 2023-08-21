@@ -34,14 +34,14 @@ const ServicePage = () => {
 
 
   return (
-    <div className=" mx-auto py-10">
+    <div className="mx-auto py-10">
       <div className="flex flex-col justify-center items-center font-serif">
         <h1 className="text-lg mb-3">__ Practice Area __</h1>
         <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide">Legal Services we do provide</h1>
         <hr className=" w-40 h-1 bg-slate-600 rounded"></hr>
       </div>
 
-      <div className="flex justify-between items-center py-10">
+      <div className="flex justify-between items-center pt-5">
         {/* <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div> */}
         <Swiper
 
@@ -64,19 +64,19 @@ const ServicePage = () => {
             },
             640:{
               slidesPerView: 2.1,
-              spaceBetween: 10
+              spaceBetween: 7
             },
             768: {
               slidesPerView: 3.1, 
-              spaceBetween: 10
+              spaceBetween: 7
             },
             1024: {
               slidesPerView: 3.4, 
-              spaceBetween: 10
+              spaceBetween: 7
             },
             1280:{
-              slidesPerView: 4.1,
-              spaceBetween: 10
+              slidesPerView: 4.2,
+              spaceBetween: 7
             }
           }}
           className="md:h-[500px] h-[480px]"
@@ -92,7 +92,7 @@ const ServicePage = () => {
       </div>
 
       {/* See more */}
-      <div className="flex justify-center items-center mt-5">
+      <div className="flex justify-center items-center">
         <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-[#B99671] hover:bg-[#B99671] bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
           <Link to="/services" className="p-1 md:text-xl text-sm uppercase">
             See more

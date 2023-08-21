@@ -9,7 +9,7 @@ import { TfiLocationPin } from "react-icons/tfi"
 
 const ContactAddress = () => {
   return (
-    <div className="md:px-10 p-5 font-semibold bg-blue-950 bg-opacity-70 text-white h-full flex justify-center items-center">
+    <div className="md:px-10 p-5 font-semibold bg-blue-950 text-white h-full flex justify-center items-center">
       <div className="flex flex-col gap-2">
         <div className=" flex flex-col gap-3">
           <h2 className=" md:text-4xl text-2xl"> __ Connect with us today</h2>

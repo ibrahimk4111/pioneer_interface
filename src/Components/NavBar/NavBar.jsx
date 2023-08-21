@@ -29,7 +29,7 @@ const NavBar = () => {
 
             {/* <Link to='/attorneys' className=" hover:text-[#99272D] uppercase font-semibold">Attorneys</Link> */}
 
-            <Link to='/news' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">News</Link>
+            {/* <Link to='/news' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">News</Link> */}
 
             <Link to='/gallery' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Gallery</Link>
 

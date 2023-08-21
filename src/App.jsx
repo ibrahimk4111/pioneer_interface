@@ -6,7 +6,7 @@ import Footer from "./pages/Footer";
 import ServicesFullPage from "./pages/ServicesFullPage";
 // import AttorneyFullPage from "./pages/AttorneyFullPage";
 import ContactPage from "./pages/ContactPage";
-import NewsPage from "./pages/NewsPage";
+// import NewsPage from "./pages/NewsPage";
 import GalleryPage from "./pages/GalleryPage";
 import AppointmentPage from "./pages/AppointmentPage";
 import DetailedService from "./Components/Service/DetailedService";
@@ -24,7 +24,7 @@ function App() {
           <Route path="/services"  Component={ServicesFullPage} />
           {/* <Route path="/attorneys"  Component={AttorneyFullPage} /> */}
           <Route path="/contact"  Component={ContactPage} />
-          <Route path="/news"  Component={NewsPage} />
+          {/* <Route path="/news"  Component={NewsPage} /> */}
           <Route path="/gallery"  Component={GalleryPage} />
           <Route path="/appointment"  Component={AppointmentPage} />
           <Route path="/detailed_service/:id"  Component={DetailedService} />

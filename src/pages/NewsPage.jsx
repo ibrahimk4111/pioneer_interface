@@ -32,14 +32,14 @@ const NewsPage = () => {
   }
 
   return (
-    <div className=" mx-auto py-10">
+    <div className="max-w-[1200px] mx-auto py-10">
       <div className="flex flex-col justify-center items-center font-serif">
         <h1 className="text-lg mb-3">__ Recent Blogs and __</h1>
         <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide">Latest News</h1>
         <hr className=" w-40 h-1 bg-slate-600 rounded"></hr>
       </div>
 
-      <div className="flex justify-between items-center py-10">
+      <div className="flex justify-between items-center pt-10">
         {/* <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div> */}
         <Swiper
           // onInit={(swiper) => {
