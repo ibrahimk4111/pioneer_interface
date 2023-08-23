@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 #root{
-  --gray-light: #fff9f3;
-  --bg-attorney: #fff0df;
+  --bg-card: #cba036;
 }
 
 

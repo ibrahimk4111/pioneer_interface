@@ -9,7 +9,7 @@ import { TfiLocationPin } from "react-icons/tfi"
 
 const ContactAddress = () => {
   return (
-    <div className="md:px-10 p-5 font-semibold bg-blue-950 text-white h-full flex justify-center items-center">
+    <div className="md:px-10 p-5 font-semibold bg-bg-card text-white h-full flex justify-center items-center">
       <div className="flex flex-col gap-2">
         <div className=" flex flex-col gap-3">
           <h2 className=" md:text-4xl text-2xl"> __ Connect with us today</h2>
@@ -17,19 +17,19 @@ const ContactAddress = () => {
         </div>
         {/* address particle */}
         <div className=" flex items-center gap-2">
-          <TfiLocationPin size={25} className="bg-white rounded-full p-1 text-black" />
+          <TfiLocationPin size={25} className="bg-white rounded-full p-1 text-blue-900" />
           <p>70, Pioneer Road, Kakrail, Segun Bagicha, Dhaka-1000.</p>
         </div>
 
         {/* phone call */}
         <div className=" flex items-center gap-2">
-          <BiPhoneCall size={25} className="bg-white rounded-full p-1 text-black" />
+          <BiPhoneCall size={25} className="bg-white rounded-full p-1 text-blue-900" />
           <Link to="/">(+88) 01711-108120 </Link>
         </div>
 
         {/* Email  */}
         <div className=" flex items-center gap-2">
-          <BiMailSend size={25} className="bg-white rounded-full p-1 text-black" />
+          <BiMailSend size={25} className="bg-white rounded-full p-1 text-blue-900" />
           <Link to="/"> admozibur@gmail.com </Link>
         </div>
 
@@ -47,8 +47,8 @@ const ContactAddress = () => {
         </div>
 
         {/* appointment  */}
-        <div className="mt-5 transition hover:scale-105 duration-300 ease-in-out flex justify-center items-center border-2 border-[#B99671] hover:bg-[#B99671] bg-opacity-75 rounded-md">
-          <Link to="/appointment" className="p-1 text-sm hover:text-white">
+        <div className="mt-5 transition hover:scale-105 duration-300 ease-in-out flex justify-center items-center border-2 border-white hover:bg-white hover:text-blue-900 bg-opacity-75 rounded-md cursor-pointer">
+          <Link to="/appointment" className="p-1 text-sm">
             Book Appointment
           </Link>
         </div>

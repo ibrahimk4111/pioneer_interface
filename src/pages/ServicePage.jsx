@@ -92,8 +92,8 @@ const ServicePage = () => {
       </div>
 
       {/* See more */}
-      <div className="flex justify-center items-center">
-        <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-[#B99671] hover:bg-[#B99671] bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
+      <div className="flex justify-center items-center cursor-pointer">
+        <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-[#B99671] hover:bg-bg-card bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
           <Link to="/services" className="p-1 md:text-xl text-sm uppercase">
             See more
           </Link>
