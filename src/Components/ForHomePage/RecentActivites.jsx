@@ -45,16 +45,14 @@ const RecentActivites = () => {
         <div className='grid md:grid-cols-4 grid-cols-1 gap-3'>
           {
             cases.map((item) => (
-              <div className=' md:w-72 w-96 border-2 border-slate-200 rounded-md hover:bg-bg-card hover:text-white transition-all  duration-500 ease-in hover:scale-105'>
-                <h2 className=' uppercase text-lg p-1'>Case No: {item.case_number}</h2>
+              <div className=' md:w-72 w-80 group transition hover:scale-105 ease-in duration-300'>
+                <h2 className='border-0 uppercase text-lg p-1 bg-bg-card text-white transition-all  duration-500 ease-in rounded-t-md'>Case No: {item.case_number}</h2>
                 <hr className=" w-full h-0 bg-slate-600 rounded"></hr>
-                <div className=' py-5 px-2'>
+                <div className=' py-5 px-2 border-2 border-slate-200 rounded-md'>
                   <h3>{item.first_party}</h3>
                   <p className=' '>Verses</p>
                   <h3>{item.second_party}</h3>
-                </div>
-                <div className='p-3'>
-                  <p className=' font-bold underline'>Result or description:</p>
+                  <p className=' font-bold underline mt-5'>Result or description:</p>
                   <p className='text-justify'>{item.Description}</p>
                 </div>
               </div>

@@ -35,17 +35,17 @@ const AboutDes = () => {
     <div className=' bg-slate-100 py-10'>
       <div className=' max-w-[1200px] mx-auto'>
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-lg mb-3 font-serif ">__ About Us __</h1>
+          <h1 className="text-lg mb-3 font-serif text-bg-card">__ About Us __</h1>
           <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide  font-serif ">Why will you choose us</h1>
-          <hr className=" w-40 h-1 bg-blue-900 rounded"></hr>
+          <hr className=" w-40 h-1 bg-slate-900 rounded"></hr>
           <p className='md:w-[65%] w-[100%] text-justify p-5 md:text-lg'>Espinal Law with offices in Miami and Orlando services the entire state of Florida in matters dealing with Personal Injury, Wrongful Death, Criminal Defense and Homeowner’s Insurance Claims. Espinal Law prides itself in zealous advocacy, responsible representation and professionalism.</p>
 
           <div className=' grid md:grid-cols-3 grid-cols-2 px-2 gap-3 pb-10'>
             {
-              categories.map((categorie) => (
-                <div className='flex items-center'>
-                  <h2 className=' px-3 py-2 text-lg bg-bg-card text-white'>{categorie.id}</h2>
-                  <h3 className=' px-3 py-2 md:text-lg text-base bg-[#fff2ce] '>{categorie.text}</h3>
+              categories.map((categorie, index) => (
+                <div key={index} className='flex items-center'>
+                  <h2 className='p-2 text-lg bg-bg-card text-white'>{categorie.id}</h2>
+                  <h3 className='p-2 md:text-lg text-base bg-[#fff2ce] '>{categorie.text}</h3>
                 </div>
                 ))
             }

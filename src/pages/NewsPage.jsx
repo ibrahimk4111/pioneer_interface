@@ -32,59 +32,60 @@ const NewsPage = () => {
   }
 
   return (
-    <div className="max-w-[1200px] mx-auto py-10">
-      <div className="flex flex-col justify-center items-center font-serif">
-        <h1 className="text-lg mb-3">__ Recent Blogs and __</h1>
-        <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide">Latest News</h1>
-        <hr className=" w-40 h-1 bg-slate-600 rounded"></hr>
-      </div>
+    <div className="bg-slate-100 py-10">
+      <div className='max-w-[1200px] mx-auto '>
+        <div className="flex flex-col justify-center items-center font-serif">
+          <h1 className="text-lg mb-3 text-bg-card">__ Recent Blogs and __</h1>
+          <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide">Latest News</h1>
+          <hr className=" w-40 h-1 bg-slate-600 rounded"></hr>
+        </div>
 
-      <div className="flex justify-between items-center pt-10">
-        {/* <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div> */}
-        <Swiper
-          // onInit={(swiper) => {
-          //   swiper.params.navigation.prevEl = prevRef.current;
-          //   swiper.params.navigation.nextEl = nextRef.current;
-          //   swiper.navigation.init();
-          //   swiper.navigation.update();
-          // }}
+        <div className="flex justify-between items-center pt-10">
+          {/* <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div> */}
+          <Swiper
+            // onInit={(swiper) => {
+            //   swiper.params.navigation.prevEl = prevRef.current;
+            //   swiper.params.navigation.nextEl = nextRef.current;
+            //   swiper.navigation.init();
+            //   swiper.navigation.update();
+            // }}
 
-          // install Swiper modules
-          modules={[Pagination, A11y, Navigation, FreeMode]}
-          // freeMode={true}
-          grabCursor={true}
-          // pagination={{ clickable: true }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.1,
-              spaceBetween: 10
-            },
-            640: {
-              slidesPerView: 2.1,
-              spaceBetween: 10
-            },
-            768: {
-              slidesPerView: 3.1,
-              spaceBetween: 10
-            },
-            1280: {
-              slidesPerView: 3.1,
-              spaceBetween: 10
-            }
-          }}
-          className="md:h-[530px] h-[480px]"
-        >
+            // install Swiper modules
+            modules={[Pagination, A11y, Navigation, FreeMode]}
+            // freeMode={true}
+            grabCursor={true}
+            // pagination={{ clickable: true }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.1,
+                spaceBetween: 10
+              },
+              640: {
+                slidesPerView: 2.1,
+                spaceBetween: 10
+              },
+              768: {
+                slidesPerView: 3.1,
+                spaceBetween: 10
+              },
+              1280: {
+                slidesPerView: 3.1,
+                spaceBetween: 10
+              }
+            }}
+            className="h-[530px]"
+          >
 
-          {news_and_blogs.map((news, index) => (
-            <SwiperSlide key={index} className=""><News key={index} news={news} index={index} /></SwiperSlide>
-          ))}
+            {news_and_blogs.map((news, index) => (
+              <SwiperSlide key={index} className=""><News key={index} news={news} index={index} /></SwiperSlide>
+            ))}
 
-        </Swiper>
+          </Swiper>
 
-        {/* <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div> */}
-      </div>
+          {/* <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div> */}
+        </div>
 
-      {/* See more
+        {/* See more
       <div className="flex justify-center items-center mt-5">
         <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-[#B99671] hover:bg-[#B99671] bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
           <Link to="/news" className="p-1 md:text-xl text-sm uppercase">
@@ -92,6 +93,7 @@ const NewsPage = () => {
           </Link>
         </div>
       </div> */}
+      </div>
     </div>
   )
 }

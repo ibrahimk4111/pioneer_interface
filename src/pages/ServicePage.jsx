@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Service from "../Components/Service/Service";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // import {FcPrevious, FcNext} from 'react-icons/fc'
 
@@ -36,7 +36,7 @@ const ServicePage = () => {
   return (
     <div className="mx-auto py-10">
       <div className="flex flex-col justify-center items-center font-serif">
-        <h1 className="text-lg mb-3">__ Practice Area __</h1>
+        <h1 className="text-lg mb-3 text-bg-card">__ Practice Area __</h1>
         <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide">Legal Services we do provide</h1>
         <hr className=" w-40 h-1 bg-slate-600 rounded"></hr>
       </div>
@@ -58,52 +58,52 @@ const ServicePage = () => {
           // }}
 
           // install Swiper modules
-          modules={ [Pagination, A11y, Navigation, FreeMode]}
+          modules={[Pagination, A11y, Navigation, FreeMode]}
           // freeMode={true}
-          grabCursor={ true}
+          grabCursor={true}
           pagination={{ clickable: true, color: "red" }}
-        breakpoints={{
-          0: {
-            slidesPerView: 1.1,
-            spaceBetween: 10
-          },
-          640: {
-            slidesPerView: 2.1,
-            spaceBetween: 7
-          },
-          768: {
-            slidesPerView: 3.1,
-            spaceBetween: 7
-          },
-          1024: {
-            slidesPerView: 3.4,
-            spaceBetween: 7
-          },
-          1280: {
-            slidesPerView: 4.2,
-            spaceBetween: 7
-          }
-        }}
-        className="md:h-[500px] h-[480px]"
+          breakpoints={{
+            0: {
+              slidesPerView: 1.1,
+              spaceBetween: 10
+            },
+            640: {
+              slidesPerView: 2.1,
+              spaceBetween: 7
+            },
+            768: {
+              slidesPerView: 3.1,
+              spaceBetween: 7
+            },
+            1024: {
+              slidesPerView: 3.4,
+              spaceBetween: 7
+            },
+            1280: {
+              slidesPerView: 4.2,
+              spaceBetween: 7
+            }
+          }}
+          className="md:h-[500px] h-[480px]"
         >
 
-        {services.map((service, index) => (
-          <SwiperSlide key={index} className=""><Service key={index} service={service} index={index} /></SwiperSlide>
-        ))}
+          {services.map((service, index) => (
+            <SwiperSlide key={index} className=""><Service key={index} service={service} index={index} /></SwiperSlide>
+          ))}
 
-      </Swiper>
+        </Swiper>
 
-      {/* <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div> */}
-    </div>
+        {/* <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div> */}
+      </div>
 
-      {/* See more */ }
-  <div className="flex justify-center items-center cursor-pointer">
-    <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-bg-card hover:bg-bg-card bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
-      <Link to="/services" className="p-1 md:text-xl text-sm uppercase">
-        See more
-      </Link>
-    </div>
-  </div>
+      {/* See more */}
+      {/* <div className="flex justify-center items-center cursor-pointer">
+        <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-bg-card hover:bg-bg-card bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
+          <Link to="/services" className="p-1 md:text-xl text-sm uppercase">
+            See more
+          </Link>
+        </div>
+      </div> */}
     </div >
   );
 };
