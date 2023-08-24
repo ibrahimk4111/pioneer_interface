@@ -45,6 +45,11 @@ const ServicePage = () => {
         {/* <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div> */}
         <Swiper
 
+          style={{
+            "--swiper-pagination-color": "#cba036",
+            "--swiper-pagination-bullet-inactive-color": "#999999",
+            "--swiper-pagination-bullet-inactive-opacity": "0.2",
+          }}
           // onInit={(swiper) => {
           //   swiper.params.navigation.prevEl = prevRef.current;
           //   swiper.params.navigation.nextEl = nextRef.current;
@@ -53,53 +58,53 @@ const ServicePage = () => {
           // }}
 
           // install Swiper modules
-          modules={[Pagination, A11y, Navigation, FreeMode]}
+          modules={ [Pagination, A11y, Navigation, FreeMode]}
           // freeMode={true}
-          grabCursor={true}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.1,
-              spaceBetween: 10
-            },
-            640:{
-              slidesPerView: 2.1,
-              spaceBetween: 7
-            },
-            768: {
-              slidesPerView: 3.1, 
-              spaceBetween: 7
-            },
-            1024: {
-              slidesPerView: 3.4, 
-              spaceBetween: 7
-            },
-            1280:{
-              slidesPerView: 4.2,
-              spaceBetween: 7
-            }
-          }}
-          className="md:h-[500px] h-[480px]"
+          grabCursor={ true}
+          pagination={{ clickable: true, color: "red" }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.1,
+            spaceBetween: 10
+          },
+          640: {
+            slidesPerView: 2.1,
+            spaceBetween: 7
+          },
+          768: {
+            slidesPerView: 3.1,
+            spaceBetween: 7
+          },
+          1024: {
+            slidesPerView: 3.4,
+            spaceBetween: 7
+          },
+          1280: {
+            slidesPerView: 4.2,
+            spaceBetween: 7
+          }
+        }}
+        className="md:h-[500px] h-[480px]"
         >
 
-          {services.map((service, index) => (
-            <SwiperSlide key={index} className=""><Service key={index} service={service} index={index} /></SwiperSlide>
-          ))}
+        {services.map((service, index) => (
+          <SwiperSlide key={index} className=""><Service key={index} service={service} index={index} /></SwiperSlide>
+        ))}
 
-        </Swiper>
+      </Swiper>
 
-        {/* <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div> */}
-      </div>
-
-      {/* See more */}
-      <div className="flex justify-center items-center cursor-pointer">
-        <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-[#B99671] hover:bg-bg-card bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
-          <Link to="/services" className="p-1 md:text-xl text-sm uppercase">
-            See more
-          </Link>
-        </div>
-      </div>
+      {/* <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div> */}
     </div>
+
+      {/* See more */ }
+  <div className="flex justify-center items-center cursor-pointer">
+    <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-bg-card hover:bg-bg-card bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
+      <Link to="/services" className="p-1 md:text-xl text-sm uppercase">
+        See more
+      </Link>
+    </div>
+  </div>
+    </div >
   );
 };
 

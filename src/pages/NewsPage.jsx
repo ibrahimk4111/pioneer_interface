@@ -11,7 +11,7 @@ import { Pagination, A11y, Navigation, FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 

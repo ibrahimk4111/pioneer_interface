@@ -36,10 +36,9 @@ const AttorneyPage = () => {
 
   return (
     <div className="py-10">
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="uppercase font-bold md:text-3xl sm:text-xl text-lg mb-3">
-          Our Attorneys & Associates
-        </h1>
+      <div className="flex flex-col justify-center items-center font-serif">
+        <h1 className="text-lg mb-3">__ Qualified Attorneys Team __</h1>
+        <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide">Our Attorneys and Associates</h1>
         <hr className=" w-40 h-1 bg-slate-600 rounded"></hr>
       </div>
       

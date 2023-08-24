@@ -15,9 +15,9 @@ const Home = () => {
   return (
     <div>
       <HeaderPage />
-      <AboutDes />
-      <RecentActivites />
+      <AboutDes />  
       <ServicePage />
+      <RecentActivites />
       <NewsPage />
       <AttorneyPage />
       <OurClients />

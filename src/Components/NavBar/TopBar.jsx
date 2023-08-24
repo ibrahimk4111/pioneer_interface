@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const TopBar = () => {
   return (
     <div className="">
-      <div className=" px-6 py-1 flex flex-col md:flex-row justify-between gap-2 bg-blue-950">
+      <div className=" px-6 py-2 flex flex-col md:flex-row justify-between gap-2 bg-blue-950">
 
         <div className="flex items-center justify-between md:space-x-6">
           {/* Phone Call  */}

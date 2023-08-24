@@ -23,7 +23,7 @@ const HeaderPage = () => {
         headers.map((header, index) => (
           index === 0 &&
           <div key={index} className="bg-cover bg-center md:h-[90vh] sm:h-[50vh] h-[70vh]" style={{ backgroundImage: `url(https://pioneer.kodbel.com${header.img})` }}>
-            <div key={index} className=" bg-black bg-opacity-50 h-full w-full flex justify-center items-center ">
+            <div key={index} className=" bg-black bg-opacity-30 h-full w-full flex justify-center items-center ">
               <div  className="flex flex-col max-w-[1200px] text-white w-full h-full items-center justify-center ">
                 <p className="md:text-3xl text-xl uppercase md:mb-5">Welcome To</p>
                 <p className=" md:text-5xl sm:text-4xl text-2xl uppercase tracking-widest font-bold">Pioneer Law Associates</p>

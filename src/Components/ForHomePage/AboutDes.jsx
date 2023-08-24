@@ -45,7 +45,7 @@ const AboutDes = () => {
               categories.map((categorie) => (
                 <div className='flex items-center'>
                   <h2 className=' px-3 py-2 text-lg bg-bg-card text-white'>{categorie.id}</h2>
-                  <h3 className=' p-2 md:text-lg text-base bg-[#fff2ce] '>{categorie.text}</h3>
+                  <h3 className=' px-3 py-2 md:text-lg text-base bg-[#fff2ce] '>{categorie.text}</h3>
                 </div>
                 ))
             }
