@@ -42,10 +42,10 @@ const RecentActivites = () => {
       </div>
 
       <div className='max-w-[1200px] mx-auto py-10 flex justify-center items-center text-base'>
-        <div className='grid md:grid-cols-4 grid-cols-1 gap-3'>
+        <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3'>
           {
-            cases.map((item) => (
-              <div className=' md:w-72 w-80 group transition hover:scale-105 ease-in duration-300'>
+            cases.map((item, index) => (
+              <div key={index} className='group transition hover:scale-105 ease-in duration-300'>
                 <h2 className='border-0 uppercase text-lg p-1 bg-bg-card text-white transition-all  duration-500 ease-in rounded-t-md'>Case No: {item.case_number}</h2>
                 <hr className=" w-full h-0 bg-slate-600 rounded"></hr>
                 <div className=' py-5 px-2 border-2 border-slate-200 rounded-md'>

@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
 
 
 const Attorney = ({ attorney, index }) => {
-  console.log(attorney)
+  // console.log(attorney)
 
   return (
     <div className=' flex justify-center items-center border-2 border-slate-200'>
       <div className='md:h-[60vh] h-[50vh] w-full flex flex-col justify-between'>
         <div className=' h-[40vh] w-full overflow-hidden flex justify-center items-center'>
-          <img className=" object-cover h-full w-auto duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${attorney.img}`} alt='...' />
+          <img className=" object-cover w-full h-auto duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${attorney.img}`} alt='...' />
         </div>
 
         <div className=" p-3 hover:bg-bg-card hover:text-white transition ease-in duration-500 flex justify-center items-center">

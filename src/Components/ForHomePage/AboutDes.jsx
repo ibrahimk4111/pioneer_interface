@@ -52,9 +52,9 @@ const AboutDes = () => {
           </div>
         </div>
 
-        <div className='h-full grid md:grid-cols-3 grid-cols-1 gap-5 border-2 border-slate-200 rounded-md p-5'>
-          <img src={headImg} alt="..." className='w-full h-auto' />
-          <div className=' md:col-span-2 '>
+        <div className='h-full flex md:flex-row flex-col justify-center items-start gap-5 border-2 border-slate-200 rounded-md p-5'>
+          <img src={headImg} alt="..." className='lg:h-[80vh] sm:h-[90vh]' />
+          <div className=' '>
             <h2 className=' md:text-3xl text-xl text-blue-950 uppercase border-b-2 border-slate-200 text-center'>Head of Pioneer Law Associates</h2>
             <p className=' md:px-12 px-5 py-5 md:text-lg text-justify'>is a practicing lawyer who studied law from University of London and was thereafter called to the Bar Council of England and Wales as a Barrister-at-Law from The Honourable Society of Lincoln’s Inn after successful completion of his Bar Professional Training Course from City University London. He has been enrolled in the Bangladesh Bar Council as an Advocate and subsequently has become an Advocate of Supreme Court of Bangladesh. He had been associated with eminent law firms in Bangladesh such as Syed Ishtiaq Ahmed & Associates, Moudud Ahmed & Associates, Tasmia Prodhan and Associates and The Legal Sanctuary. Currently he is practicing in the High Court Division of the Supreme Court of Bangladesh. He has in depth experience in Civil, Criminal, Banking, Non-Banking Commercial Matters, Company Matters, Income Tax Matters, Family Matters and Arbitration Matters. He has gained vast knowledge of all kinds of drafting and legal vettings and he has been working in the legal arena in different positions for more than 8 (eight) years.</p>
           </div>

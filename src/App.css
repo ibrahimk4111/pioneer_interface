@@ -13,6 +13,9 @@ body.active-modal {
 body{
   max-width: 1600px; 
   margin: 0px auto; 
-  scroll-behavior: smooth;
   font-family: 'Sofia Sans', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
 }

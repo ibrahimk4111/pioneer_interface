@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const TopBar = () => {
   return (
-    <div className="">
-      <div className=" px-6 py-2 flex flex-col md:flex-row justify-between gap-2 bg-blue-950">
+    <div className="bg-bg-card py-1">
+      <div className=" px-6 py-2 flex flex-col md:flex-row justify-between gap-2">
 
         <div className="flex items-center justify-between md:space-x-6">
           {/* Phone Call  */}
@@ -26,6 +26,7 @@ const TopBar = () => {
         </div>
 
         <div className=" flex items-center justify-between md:space-x-10">
+          <h2 className=" text-white md:block hidden">Follow Us on:</h2>
           {/* icons */}
           <div className="flex items-center gap-4">
             <Link to="https://www.facebook.com/" target="_blank">
@@ -40,7 +41,7 @@ const TopBar = () => {
           </div>
 
           {/* appointment */}
-          <Link to="/appointment" className=" md:hidden px-2 py-1  bg-blue-950 border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
+          <Link to="/appointment" className=" md:hidden px-2 py-1  bg-bg-card border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
                 Book Appointment         
             </Link>
         </div>

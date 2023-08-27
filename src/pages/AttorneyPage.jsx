@@ -64,24 +64,24 @@ const AttorneyPage = () => {
           pagination={{ clickable: true, color: "red" }}
           breakpoints={{
             0: {
-              slidesPerView: 1.1,
+              slidesPerView: 1.5,
               spaceBetween: 10
             },
             640: {
-              slidesPerView: 2.1,
+              slidesPerView: 2.5,
               spaceBetween: 7
             },
             768: {
-              slidesPerView: 3.1,
-              spaceBetween: 7
+              slidesPerView: 3.5,
+              spaceBetween: 10
             },
             1024: {
-              slidesPerView: 4.1,
-              spaceBetween: 7
+              slidesPerView: 4.2,
+              spaceBetween: 10
             },
             1200: {
-              slidesPerView: 4.2,
-              spaceBetween: 7
+              slidesPerView: 4.1,
+              spaceBetween: 20
             }
           }}
         >

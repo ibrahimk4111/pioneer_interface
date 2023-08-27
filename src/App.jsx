@@ -3,7 +3,7 @@ import "./App.css";
 import Home from './Components/Home'
 import Navigationbar from "./pages/Navigationbar";
 import Footer from "./pages/Footer";
-import ServicesFullPage from "./pages/ServicesFullPage";
+// import ServicesFullPage from "./pages/ServicesFullPage";
 // import AttorneyFullPage from "./pages/AttorneyFullPage";
 import ContactPage from "./pages/ContactPage";
 // import NewsPage from "./pages/NewsPage";
@@ -21,7 +21,7 @@ function App() {
         <Navigationbar />
         <Routes>
           <Route path="/" exact Component={Home} />
-          <Route path="/services"  Component={ServicesFullPage} />
+          {/* <Route path="/services"  Component={ServicesFullPage} /> */}
           {/* <Route path="/attorneys"  Component={AttorneyFullPage} /> */}
           <Route path="/contact"  Component={ContactPage} />
           {/* <Route path="/news"  Component={NewsPage} /> */}

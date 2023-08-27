@@ -36,9 +36,9 @@ const ContactForm = () => {
     <div className="flex justify-center">
       <form
         onSubmit={(e) => formSubmit(e)}
-        className="flex flex-col items-start justify-start gap-1 w-full bg-blue-950 bg-opacity-90 p-5"
+        className="flex flex-col items-start justify-start gap-1 w-full bg-[rgba(255,197,51,0.3)] bg-opacity-90 p-5"
       >
-        <label htmlFor="name" value='Name' className="text-white">Name :</label>
+        <label htmlFor="name" value='Name' className="">Name :</label>
         <input
           type="text"
           name="Name"
@@ -48,7 +48,7 @@ const ContactForm = () => {
           onChange={dataInput}
           required
         />
-        <label htmlFor="number" className="text-white">Mobile :</label>
+        <label htmlFor="number" className="">Mobile :</label>
         <input
           type="number"
           name="Phone"
@@ -58,7 +58,7 @@ const ContactForm = () => {
           onChange={dataInput}
           required
         />
-        <label htmlFor="email" className="text-white">Email :</label>
+        <label htmlFor="email" className="">Email :</label>
         <input
           type="email"
           name="Email"
@@ -68,7 +68,7 @@ const ContactForm = () => {
           onChange={dataInput}
           required
         />
-        <label htmlFor="desc" className="text-white">Your Description :</label>
+        <label htmlFor="desc" className="">Your Description :</label>
         <textarea
           name="Description"
           id=""
@@ -82,7 +82,7 @@ const ContactForm = () => {
 
         <button
           type="submit"
-          className="border-2 border-white hover:bg-white hover:text-blue-950 text-white w-24 p-1 rounded-md mt-7 transition ease-in-out duration-300 hover:scale-110"
+          className="border-2 border-bg-card hover:bg-bg-card hover:text-white w-24 p-1 rounded-md mt-7 transition ease-in-out duration-300 hover:scale-110"
         >
           Submit
         </button>

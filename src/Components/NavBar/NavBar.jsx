@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import logo from "../../styles/logo.png";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 import { BiMenu } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
@@ -17,7 +17,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="">
+      <div className="py-2">
 
         <div className="px-6 py-4 flex justify-between items-center">
           <Link to="/" className=" cursor-pointer"> <img src={logo} alt="..." className="w-32" /> </Link>
@@ -25,7 +25,7 @@ const NavBar = () => {
 
             <Link to='/' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Home</Link>
 
-            <Link to='/services' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Services</Link>
+            <Link smooth to='#services' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Services</Link>
 
             {/* <Link to='/attorneys' className=" hover:text-[#99272D] uppercase font-semibold">Attorneys</Link> */}
 
@@ -35,7 +35,7 @@ const NavBar = () => {
 
             <Link to='/contact' className=" p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Contact</Link>
             {/* appointment */}
-            <Link to="/appointment" className=" uppercase p-2 bg-blue-950 rounded-md text-white">
+            <Link to="/appointment" className=" uppercase p-2 bg-bg-card rounded-md text-white transition hover:scale-105 duration-300 ease-in">
                 Book Appointment         
             </Link>
 

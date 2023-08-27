@@ -5,13 +5,14 @@ import Service from "../Components/Service/Service";
 // import {FcPrevious, FcNext} from 'react-icons/fc'
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Navigation, FreeMode } from 'swiper/modules';
+  // import { Swiper, SwiperSlide } from 'swiper/react';
+  // import { Pagination, A11y, Navigation, FreeMode } from 'swiper/modules';
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/free-mode';
+  // import 'swiper/css';
+  // import 'swiper/css/pagination';
+  // import 'swiper/css/free-mode';
+import { Link } from "react-router-dom";
 
 
 
@@ -34,16 +35,16 @@ const ServicePage = () => {
 
 
   return (
-    <div className="mx-auto py-10">
+    <div className=" py-10" id="services">
       <div className="flex flex-col justify-center items-center font-serif">
         <h1 className="text-lg mb-3 text-bg-card">__ Practice Area __</h1>
         <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide">Legal Services we do provide</h1>
         <hr className=" w-40 h-1 bg-slate-600 rounded"></hr>
       </div>
 
-      <div className="flex justify-between items-center pt-5">
+      <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-5 max-w-[1240px] mx-auto">
         {/* <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size={20} /></div> */}
-        <Swiper
+        {/*<Swiper
 
           style={{
             "--swiper-pagination-color": "#cba036",
@@ -85,25 +86,28 @@ const ServicePage = () => {
             }
           }}
           className="md:h-[500px] h-[480px]"
-        >
+        >*/}
 
           {services.map((service, index) => (
-            <SwiperSlide key={index} className=""><Service key={index} service={service} index={index} /></SwiperSlide>
+            // <SwiperSlide key={index} className="">
+              index <= 7 &&
+              <Service key={index} service={service} index={index} />
+            // </SwiperSlide>
           ))}
 
-        </Swiper>
+        {/* </Swiper> */}
 
         {/* <div ref={nextRef} className="p-1 rounded-full hover:bg-slate-300"><FcNext size={20} /></div> */}
       </div>
 
       {/* See more */}
-      {/* <div className="flex justify-center items-center cursor-pointer">
-        <div className="hover:text-white sm:w-[22%] w-40 flex justify-center items-center border-2 border-bg-card hover:bg-bg-card bg-opacity-75 rounded-md transition hover:scale-105 duration-300 ease-in-out">
-          <Link to="/services" className="p-1 md:text-xl text-sm uppercase">
-            See more
+      <div className="flex justify-center items-center mt-10">
+        <div className="flex justify-center items-center border-2 border-bg-card hover:bg-bg-card hover:text-white rounded-md transition hover:scale-110 duration-300 ease-in cursor-pointer">
+          <Link to="/services" className="px-5 text-base">
+            View All
           </Link>
         </div>
-      </div> */}
+      </div>
     </div >
   );
 };
