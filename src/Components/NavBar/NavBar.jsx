@@ -14,6 +14,8 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
+  // tailwind css
+  const classNames = 'p-2 uppercase font-semibold hover:bg-[#ce940049] rounded-md transition duration-500'
 
   return (
     <>
@@ -21,21 +23,21 @@ const NavBar = () => {
 
         <div className="px-6 py-4 flex justify-between items-center">
           <Link to="/" className=" cursor-pointer"> <img src={logo} alt="..." className="w-32" /> </Link>
-          <div className="hidden md:flex space-x-6 " >
+          <div className="hidden md:flex items-center space-x-6 " >
 
-            <Link to='/' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Home</Link>
+            <Link to='/' className={classNames}>Home</Link>
 
-            <Link smooth to='#services' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Services</Link>
+            <Link smooth to='#services' className={classNames} >Services</Link>
 
             {/* <Link to='/attorneys' className=" hover:text-[#99272D] uppercase font-semibold">Attorneys</Link> */}
 
             {/* <Link to='/news' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">News</Link> */}
 
-            <Link to='/gallery' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Gallery</Link>
+            <Link to='/gallery' className={classNames}>Gallery</Link>
 
-            <Link to='/contact' className=" p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">Contact</Link>
+            <Link to='/contact' className={classNames}>Contact</Link>
             {/* appointment */}
-            <Link to="/appointment" className=" uppercase p-2 bg-bg-card rounded-md text-white transition hover:scale-105 duration-300 ease-in">
+            <Link to="/appointment" className={`border-2 border-bg-card ${classNames}`}>
                 Book Appointment         
             </Link>
 
@@ -49,17 +51,17 @@ const NavBar = () => {
         <div className={`md:hidden transition ease-in-out duration-1000 ${isOpen ? ' translate-x-0' : ' translate-x-[100%]'}`} >
           <div className={isOpen ? "flex flex-col gap-1 px-6 py-3" : "hidden"} >
 
-            <Link onClick={toggleMenu} to='/' className=" hover:text-[#99272D] uppercase p-4 bg-slate-100 font-semibold">Home</Link>
+            <Link onClick={toggleMenu} to='/' className={classNames}>Home</Link>
 
-            <Link onClick={toggleMenu} to='/services' className=" hover:text-[#99272D] uppercase p-4 bg-slate-100 font-semibold">Services</Link>
+            <Link onClick={toggleMenu} smooth to='#services' className={classNames}>Services</Link>
 
-            <Link onClick={toggleMenu} to='/attorneys' className=" hover:text-[#99272D] uppercase p-4 bg-slate-100 font-semibold">Attorneys</Link>
+            {/* <Link onClick={toggleMenu} to='/attorneys' className={classNames}>Attorneys</Link> */}
 
-            <Link onClick={toggleMenu} to='/news' className=" hover:text-[#99272D] uppercase p-4 bg-slate-100 font-semibold">News</Link>
+            {/* <Link onClick={toggleMenu} to='/news' className={classNames}>News</Link> */}
 
-            <Link onClick={toggleMenu} to='/gallery' className=" hover:text-[#99272D] uppercase p-4 bg-slate-100 font-semibold">Gallery</Link>
+            <Link onClick={toggleMenu} to='/gallery' className={classNames}>Gallery</Link>
 
-            <Link onClick={toggleMenu} to='/contact' className=" hover:text-[#99272D] uppercase p-4 bg-slate-100 font-semibold">Contact</Link>
+            <Link onClick={toggleMenu} to='/contact' className={classNames}>Contact</Link>
 
           </div>
         </div>

@@ -40,10 +40,10 @@ const AppointmentForm = () => {
         <div className="py-5 flex justify-center">
             <form
                 onSubmit={(e) => formSubmit(e)}
-                className="flex flex-col items-start justify-start gap-1 w-full bg-slate-200 rounded-md p-5"
+                className="flex flex-col items-start justify-start gap-1 w-full bg-bg-card rounded-md p-5"
             >
 
-                <label htmlFor="name" value='Name'>Name :</label>
+                <label className=" text-white" htmlFor="name" value='Name'>Name :</label>
                 <input
                     type="text"
                     name="Name"
@@ -54,7 +54,7 @@ const AppointmentForm = () => {
                     required
                 />
 
-                <label htmlFor="number">Mobile :</label>
+                <label className=" text-white" htmlFor="number">Mobile :</label>
                 <input
                     type="number"
                     name="Phone"
@@ -65,7 +65,7 @@ const AppointmentForm = () => {
                     required
                 />
 
-                <label htmlFor="email">Email :</label>
+                <label className=" text-white" htmlFor="email">Email :</label>
                 <input
                     type="email"
                     name="Email"
@@ -76,7 +76,7 @@ const AppointmentForm = () => {
                     required
                 />
 
-                <label htmlFor="date">Meeting Date :</label>
+                <label className=" text-white" htmlFor="date">Meeting Date :</label>
                 <input
                     type="date"
                     name="Date"
@@ -86,7 +86,7 @@ const AppointmentForm = () => {
                     required
                 />
 
-                <label htmlFor="desc">Topic Descriptions :</label>
+                <label className=" text-white" htmlFor="desc">Topic Descriptions :</label>
                 <textarea
                     name="Description"
                     cols="30"
@@ -99,7 +99,7 @@ const AppointmentForm = () => {
 
                 <button
                     type="submit"
-                    className="border-2 border-[#B99671] hover:bg-[#B99671] hover:text-white w-24 p-1 rounded-md mt-7 transition ease-in-out duration-300 hover:scale-110"
+                    className="border-2 border-white hover:bg-white hover:text-black text-white w-24 p-1 rounded-md mt-7 transition ease-in-out duration-300 hover:scale-110"
                 >
                     Submit
                 </button>

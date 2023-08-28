@@ -10,17 +10,17 @@ const Attorney = ({ attorney, index }) => {
   // console.log(attorney)
 
   return (
-    <div className=' flex justify-center items-center border-2 border-slate-200'>
-      <div className='md:h-[60vh] h-[50vh] w-full flex flex-col justify-between'>
-        <div className=' h-[40vh] w-full overflow-hidden flex justify-center items-center'>
-          <img className=" object-cover w-full h-auto duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${attorney.img}`} alt='...' />
+    <div className='px-2 flex justify-center items-center '>
+      <div className='md:h-[500px] h-[600px] w-full flex flex-col justify-between border-2 border-slate-200'>
+        <div className=' w-full h-[75%] overflow-hidden flex justify-center items-center'>
+          <img className=" object-cover object-top w-full h-full duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${attorney.img}`} alt='...' />
         </div>
 
         <div className=" p-3 hover:bg-bg-card hover:text-white transition ease-in duration-500 flex justify-center items-center">
           <div className='flex flex-col justify-between'>
             <div>
-              <h2 className="md:text-xl text-lg font-bold pr-1">{attorney.attr_name}</h2>
-              <h2 className="md:text-xl text-lg pr-1">{attorney.designation}</h2>
+              <h2 className="md:text-xl text-lg font-bold">{attorney.attr_name}</h2>
+              <h2 className="md:text-xl text-lg">{attorney.designation}</h2>
             </div>
 
             <div className=' flex flex-col'>

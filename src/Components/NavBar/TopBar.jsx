@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const TopBar = () => {
   return (
-    <div className="bg-bg-card py-1">
+    <div className="bg-blue-950 py-1">
       <div className=" px-6 py-2 flex flex-col md:flex-row justify-between gap-2">
 
         <div className="flex items-center justify-between md:space-x-6">

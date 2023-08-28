@@ -7,14 +7,15 @@ const ServicesFullPage = () => {
   const [services, setServices] = useState([])
 
   useEffect(() => {
+    const getServices = async () => {
+      const response = await fetch('https://pioneer.kodbel.com/api/service/')
+      const data = await response.json()
+      setServices(data)
+    }
     getServices()
   }, [])
 
-  const getServices = async () => {
-    const response = await fetch('https://pioneer.kodbel.com/api/service/')
-    const data = await response.json()
-    setServices(data)
-  }
+  
 
   return (
     <div className=" mx-auto">

@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { UserContext } from '../Context/UseContext'
 
 const OurClients = () => {
+  const { text } = useContext(UserContext)
   return (
-    <div>OurClients</div>
+    <div>
+      <p>{text}</p>
+    </div>
   )
 }
 

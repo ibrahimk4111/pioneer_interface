@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-slate-700 text-white">
+    <div className="bg-blue-950 text-white">
       <div className=" px-12 py-6">
 
         <div className=" grid lg:grid-cols-4 gap-4">
@@ -16,7 +16,7 @@ const Footer = () => {
                   <h1 className="uppercase">Segunbagicha Chambers:</h1>
                   <hr className=" w-52 h-0 bg-slate-400 rounded"></hr>
                 </div>
-                <div className=" bg-slate-300 text-black my-3 w-auto rounded-md">
+                <div className=" bg-slate-100 text-black my-3 w-auto rounded-md">
                   <div className="p-5 ">
                     <p>70, Pioneer Road, Kakrail,</p>
                     <p>Opposite of Tax Bar,</p>
@@ -41,7 +41,7 @@ const Footer = () => {
                   <h1 className="uppercase">Court Chamber:</h1>
                   <hr className=" w-32 h-0 bg-slate-400 rounded"></hr>
                 </div>
-                <div className=" bg-slate-300 text-black my-3 w-auto rounded-md">
+                <div className=" bg-slate-100 text-black my-3 w-auto rounded-md">
                   <div className="p-5 ">
                     <p>Hall Room # 2, Main Building,</p>
                     <p>Supreme Court Bar Association,</p>

@@ -1,27 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
+import { UserContext } from '../Components/Context/UseContext'
 import Gallery from '../Components/Gallery/Gallery'
 
+
 const GalleryPage = () => {
-  
-  const [images, setImages] = useState([])
 
-  useEffect(()=>{
-    const getImages = async () =>{
-      const response = await fetch('https://pioneer.kodbel.com/api/imagesForGallery/')
-      const data = await response.json()
-      setImages(data)
-    }
-    getImages()
-  }, [])
-
-  
+  const {images} = useContext(UserContext)
 
   return (
     <div className=' p-5'>
-      <div className='md:columns-4 sm:columns-3 columns-1 space-y-3'>
+      <div className='lg:columns-4 md:columns-3 sm:columns-2 columns-1 space-y-3'>
       {
         images.map((img, index) => (
-          <Gallery key={index} index={index} images={images} img={img}/>
+          <Gallery key={index} index={index} img={img}/>
         ))
       }
     </div>

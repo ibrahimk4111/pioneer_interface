@@ -1,23 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { UserContext } from '../Context/UseContext'
 import ImageView from './ImageView'
 // import { Link } from 'react-router-dom'
 
-const Gallery = ({ img, index, images }) => {
+const Gallery = ({ img, index }) => {
 
-    const [modal, setModal] = useState(false)
-    const [imgSrcId, setImgSrcId] = useState(0)
-
-    const toggleModal = (e) => {
-        setModal(!modal)
-        const id = parseInt(e.target['id'])
-        setImgSrcId(id)
-    }
-
-    if (modal) {
-        document.body.classList.add('active-modal')
-    } else {
-        document.body.classList.remove('active-modal')
-    }
+    // useContext hook to call data
+    const {images, toggleModal, modal, imgSrcId} = useContext(UserContext)
+    
 
     return (
         <div>

@@ -54,35 +54,57 @@
 
 ### Swiper JS config
 ```
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, A11y, Navigation, FreeMode } from 'swiper/modules';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+
+
 <div ref={prevRef} className=" bg-slate-200 w-20 h-5">Prev</div>
+        {/* <div ref={prevRef} className="p-1 rounded-full hover:bg-slate-300"><FcPrevious size= 20} /></div>
         <Swiper
 
-          onInit={(swiper) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
+          style={{
+            "--swiper-pagination-color": "#cba036",
+            "--swiper-pagination-bullet-inactive-color": "#999999",
+            "--swiper-pagination-bullet-inactive-opacity": "0.2",
           }}
+          // onInit={(swiper) => {
+          //   swiper.params.navigation.prevEl = prevRef.current;
+          //   swiper.params.navigation.nextEl = nextRef.current;
+          //   swiper.navigation.init();
+          //   swiper.navigation.update();
+          // }}
 
           // install Swiper modules
           modules={[Pagination, A11y, Navigation, FreeMode]}
-          freeMode={true}
+          // freeMode={true}
           grabCursor={true}
-          pagination={{ clickable: true }}
+          pagination={{ clickable: true, color: "red" }}
           breakpoints={{
             0: {
-              slidesPerView: 1,
-              spaceBetween: 5
+              slidesPerView: 1.1,
+              spaceBetween: 10
             },
             640: {
-              slidesPerView: 3,
-              spaceBetween: 5
+              slidesPerView: 2.1,
+              spaceBetween: 7
             },
             768: {
-              slidesPerView: 4,
-              spaceBetween: 5
+              slidesPerView: 3.1,
+              spaceBetween: 7
             },
-
+            1024: {
+              slidesPerView: 3.4,
+              spaceBetween: 7
+            },
+            1280: {
+              slidesPerView: 4.2,
+              spaceBetween: 7
+            }
           }}
 
         >
@@ -93,7 +115,7 @@
 
         </Swiper>
 
-        <div ref={nextRef}>Next</div>
+        <div ref={nextRef}>Next</div>*/}
 ```
 
 
