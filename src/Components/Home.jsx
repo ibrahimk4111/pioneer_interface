@@ -3,7 +3,7 @@ import HeaderPage from "./HeaderPage";
 import ContactPage from "../pages/ContactPage";
 import ServicePage from "../pages/ServicePage";
 import AttorneyPage from "../pages/AttorneyPage";
-import RecentActivites from "./ForHomePage/RecentActivites";
+// import RecentActivites from "./ForHomePage/RecentActivites";
 import NewsPage from '../pages/NewsPage'
 import AboutDes from "./ForHomePage/AboutDes";
 import OurClients from "./ForHomePage/OurClients";
@@ -18,7 +18,7 @@ const Home = () => {
       <HeaderPage />
       <AboutDes />  
       <ServicePage />
-      <RecentActivites />
+      {/* <RecentActivites /> */}
       <NewsPage />
       <AttorneyPage />
       <OurClients />
