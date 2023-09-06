@@ -18,7 +18,7 @@ const AttorneyPage = () => {
   const {attorneys} = useContext(UserContext)
 
   return (
-    <div className="mx-auto py-10">
+    <div className="mx-auto py-10" id="attorneys">
       <div className="flex flex-col justify-center items-center font-serif">
         <h1 className="text-lg mb-3 text-bg-card">__ Lawyer Team __</h1>
         <h1 className="font-bold md:text-3xl sm:text-xl text-lg mb-3 tracking-wide">Our Attorneys and Associates</h1>

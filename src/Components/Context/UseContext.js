@@ -5,6 +5,28 @@ export const UserContext = createContext();
 
 // step 2: creating a mother function or component having all other compnent into it.
 export const TaskProvider = ({ children }) => {
+
+  // Start Navigation Section
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [serviceDirectory, setSerivceDirectory] = useState(true)
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const setDirectoryFalse = () => {
+    setSerivceDirectory(false)
+    console.log(serviceDirectory)
+  }
+
+  const DirectoryTrue = () => {
+    setSerivceDirectory(true)
+    console.log(serviceDirectory)
+  }
+
+  // End Navigation Section
+
   // Start Header Sections data
   const [headers, setHeader] = useState([]);
 
@@ -29,6 +51,8 @@ export const TaskProvider = ({ children }) => {
     };
     getServices();
   }, []);
+
+
   // End Services Sections data
 
   // Start news and blogs Section data
@@ -74,7 +98,6 @@ export const TaskProvider = ({ children }) => {
   // gallery component's section
   const [current, setCurrent] = useState(0);
   const [modal, setModal] = useState(false);
-  console.log("curren:", current)
 
   const toggleModal = async (e) => {
     setModal(!modal);
@@ -91,7 +114,7 @@ export const TaskProvider = ({ children }) => {
 
   // imageView component's functions
   
-  //carousel
+  //Gallery carousel
   const prevBtn = async () => {
     const newIndex = current === 0 ? images.length - 1 : current - 1;
     setCurrent(newIndex);
@@ -104,11 +127,15 @@ export const TaskProvider = ({ children }) => {
 
   // End Gallery Sections data
 
-  const text = "hello";
+
   return (
     <UserContext.Provider
       value={{
-        text,
+        isOpen, 
+        serviceDirectory,
+        setDirectoryFalse,
+        DirectoryTrue,
+        toggleMenu,
         attorneys,
         services,
         news_and_blogs,

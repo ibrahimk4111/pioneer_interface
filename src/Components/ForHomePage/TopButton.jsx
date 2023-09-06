@@ -8,7 +8,6 @@ const TopButton = () => {
 
     const backToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
-        console.log(window.scrollTo)
     }
 
     window.onscroll = () => {
@@ -19,8 +18,6 @@ const TopButton = () => {
             setVisible(false)
         }
     }
-    
-    console.log(isVisible)
 
     return (
         <div>

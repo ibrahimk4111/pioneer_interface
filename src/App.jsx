@@ -6,7 +6,6 @@ import { TaskProvider } from "./Components/Context/UseContext";
 import Home from './Components/Home'
 import Navigationbar from "./pages/Navigationbar";
 import Footer from "./pages/Footer";
-// import ServicesFullPage from "./pages/ServicesFullPage";
 import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
 import AppointmentPage from "./pages/AppointmentPage";
@@ -22,7 +21,6 @@ function App() {
         <Navigationbar />
         <Routes>
           <Route path="/" exact Component={Home} />
-          {/* <Route path="/services"  Component={ServicesFullPage} /> */}
           <Route path="/contact" Component={ContactPage} />
           <Route path="/gallery" Component={GalleryPage} />
           <Route path="/appointment" Component={AppointmentPage} />
