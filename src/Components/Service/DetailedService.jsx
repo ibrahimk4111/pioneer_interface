@@ -23,9 +23,9 @@ const DetailedService = () => {
   console.log(singleService)
 
   return (
-    <div className="max-w-[1200px] mx-auto h-auto md:py-10 py-5 grid grid-cols-4 gap-2">
+    <div className="max-w-[1200px] mx-auto h-auto md:py-10 py-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-2">
 
-      <div className=' flex flex-col justify-start gap-10 h-auto border-2 border-slate-300 col-span-2 overflow-hidden'>
+      <div className=' flex flex-col justify-start gap-10 h-auto border-2 border-slate-300 lg:col-span-2 md:col-span-2 overflow-hidden'>
         <img className=" object-cover h-80 duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${singleService.img}`} alt='...' />
 
         <div className=" flex flex-col space-y-3 px-5 w-full">

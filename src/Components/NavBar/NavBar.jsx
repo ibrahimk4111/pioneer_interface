@@ -63,13 +63,13 @@ const NavBar = () => {
             {
               serviceDirectory ?
                 (<>
-                  <Link to='#services' className={classNames}>Services</Link>
-                  <Link smooth to='#attorneys' className={classNames}>Attorneys</Link>
+                  <Link to='#services' onClick={toggleMenu} className={classNames}>Services</Link>
+                  <Link smooth to='#attorneys' onClick={toggleMenu} className={classNames}>Attorneys</Link>
                 </>
                 ) : (
                   <>
-                    <Link to={`/detailed_service/${1}`} className={classNames}>service</Link>
-                    <Link smooth to='/attorneys' className={classNames}>Attorney</Link>
+                    <Link to={`/detailed_service/${1}`} onClick={toggleMenu} className={classNames}>service</Link>
+                    <Link smooth to='/attorneys' className={`${classNames} hidden`}>Attorney</Link>
                   </>
                 )
             }
