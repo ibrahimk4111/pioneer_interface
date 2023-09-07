@@ -31,7 +31,7 @@ const ServicePage = () => {
       {/* view all button */}
       <div className="flex justify-center items-center mt-10">
         <div className="flex justify-center items-center border-2 border-bg-card hover:bg-bg-card hover:text-white rounded-md transition hover:scale-110 duration-300 ease-in cursor-pointer">
-          <Link to="/services" className="px-5 text-base">
+          <Link to={`/detailed_service/${1}`} className="px-5 text-base">
             View All
           </Link>
         </div>

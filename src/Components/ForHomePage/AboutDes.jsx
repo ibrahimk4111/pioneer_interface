@@ -1,6 +1,5 @@
 import React from 'react'
 import headImg from '../../styles/raj_de.png'
-// import headBgImg from '../../styles/antique-leather-bound-books-rustic-bookshelf-generated-by-ai.jpg'
 
 const AboutDes = () => {
 

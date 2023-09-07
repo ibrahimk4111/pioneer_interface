@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { UserContext } from '../Context/UseContext'
 
 const NewsDetails = () => {
+
+  const {news_and_blogs} = useContext(UserContext)
 
   const [news, setNews] = useState({})
   const { id } = useParams()
@@ -19,24 +22,34 @@ const NewsDetails = () => {
   
 
   return (
-    <div className="w-full mx-auto h-auto md:py-10 py-5">
+    <div className="max-w-[1200px] mx-auto h-auto md:py-10 py-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-2">
 
-      <div className=' flex flex-col md:flex-row justify-start gap-10 h-auto'>
-        <div className='overflow-hidden flex justify-center items-center md:w-auto '>
-          <img className=" object-cover md:h-60 h-40 duration-300 hover:scale-110" src={`https://pioneer.kodbel.com${news.img}`} alt='...' />
-        </div>
+      <div className=' flex flex-col justify-start gap-10 h-auto border-2 border-slate-300 lg:col-span-2 md:col-span-2 overflow-hidden'>
+        <img className=" object-cover h-80 duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${news.img}`} alt='...' />
 
-        <div className=" flex flex-col space-y-3 border-l-2 border-slate-400 px-5 md:w-[70%] w-full">
-          <h2 className="text-xl font-bold pr-1">{news.title}</h2>
-                    
-          <div className='w-full'>
-            <p className=' text-justify'>{news.Description}</p>
+        <div className=" flex flex-col space-y-3 px-5 w-full">
+          <h2 className="text-2xl font-bold pr-1">{news.title}</h2>
+          <h2 className="text-lg font-semibold pr-1">{news.short_Description}</h2>
+          <div className='w-full py-5'>
+            <p className=' text-justify text-lg'>{news.full_Description}</p>
           </div>
-
         </div>
+      </div>
 
 
 
+      {/* Right bar */}
+      <div className=' flex flex-col gap-2'>
+        {
+          news_and_blogs.map((item, index) => (
+            <Link key={index} to={`/newsDetails/${item.id}`} className='active:bg-bg-card focus:text-white focus:bg-bg-card bg-slate-50'>
+              <div className='text-2xl w-full flex gap-5'>
+                <span className=' p-2'>{item.title}</span>
+              </div>
+            </Link>
+
+          ))
+        }
       </div>
     </div>
   )

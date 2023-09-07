@@ -4,7 +4,7 @@ import smImg from '../../styles/handsome-judge-with-gavel-sitting-courtroom_8586
 
 const News = ({ news }) => {
   return (
-    <Link to={`/detailed_service/${news.id}`}>
+    <Link to={`/newsDetails/${news.id}`}>
       <div className='flex justify-center items-center py-3 '>
         <div className="h-[100%] w-[95%] cursor-pointer  transition hover:scale-95 duration-500 hover:shadow-xl bg-white">
 

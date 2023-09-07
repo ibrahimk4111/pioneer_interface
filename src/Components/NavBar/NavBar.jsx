@@ -29,16 +29,16 @@ const NavBar = () => {
                 (<>
                   <Link to='#services' className={classNames}>Services</Link>
                   <Link smooth to='#attorneys' className={classNames}>Attorneys</Link>
+                  <Link smooth to='#news' className={classNames}>News</Link>
                 </>
                 ) : (
                   <>
                     <Link to={`/detailed_service/${1}`} className={classNames}>service</Link>
                     <Link smooth to='/attorneys' className={`${classNames} hidden`}>Attorney</Link>
+                    <Link smooth to={`/newsDetails/${1}`} className={classNames}>News & blog</Link>
                   </>
                 )
             }
-
-            {/* <Link to='/news' className="p-2 hover:text-white uppercase font-semibold hover:bg-blue-950 rounded-sm transition duration-500">News</Link> */}
 
             <Link to='/gallery' onClick={setDirectoryFalse} className={classNames}>Gallery</Link>
 
@@ -63,18 +63,18 @@ const NavBar = () => {
             {
               serviceDirectory ?
                 (<>
-                  <Link to='#services' onClick={toggleMenu} className={classNames}>Services</Link>
+                  <Link smooth to='#services' onClick={toggleMenu} className={classNames}>Services</Link>
                   <Link smooth to='#attorneys' onClick={toggleMenu} className={classNames}>Attorneys</Link>
+                  <Link smooth onClick={toggleMenu} to='/news' className={classNames}>News</Link>
                 </>
                 ) : (
                   <>
                     <Link to={`/detailed_service/${1}`} onClick={toggleMenu} className={classNames}>service</Link>
-                    <Link smooth to='/attorneys' className={`${classNames} hidden`}>Attorney</Link>
+                    <Link to='/' className={`${classNames} hidden`}>Attorney</Link>
+                    <Link to={`/newsDetails/${1}`} className={classNames}>News</Link>
                   </>
                 )
             }
-
-            {/* <Link onClick={toggleMenu} to='/news' className={classNames}>News</Link> */}
 
             <Link onClick={() => { toggleMenu(); setDirectoryFalse() }} to='/gallery' className={classNames}>Gallery</Link>
 

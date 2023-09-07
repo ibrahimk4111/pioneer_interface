@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { UserContext } from '../Context/UseContext'
+import { HiScale } from 'react-icons/hi'
 
 const DetailedService = () => {
 
@@ -37,15 +38,16 @@ const DetailedService = () => {
         </div>
       </div>
 
-      
-      
+
+
       {/* Right bar */}
       <div className=' flex flex-col gap-2'>
         {
           services.map((item, index) => (
             <Link key={index} to={`/detailed_service/${item.id}`} onClick={setDirectoryFalse} className='active:bg-bg-card focus:text-white focus:bg-bg-card bg-slate-50'>
-              <div className='text-2xl w-full p-3'>
-                {item.title}
+              <div className='text-2xl w-full flex gap-5'>
+                <span className='bg-bg-card text-white p-2'><HiScale /></span>
+                <span className=' p-2'>{item.title}</span>
               </div>
             </Link>
 

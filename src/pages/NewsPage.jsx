@@ -17,7 +17,7 @@ const NewsPage = () => {
   const { news_and_blogs } = useContext(UserContext)
 
   return (
-    <div className="bg-slate-100 py-10">
+    <div className="bg-slate-100 py-10" id='news'>
       <div className='max-w-[1200px] mx-auto '>
 
         {/* start header of blog section */}
