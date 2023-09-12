@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { UserContext } from '../Context/UseContext'
+import { UserContext } from '../Context/UserContext'
+import smImg from '../../styles/handsome-judge-with-gavel-sitting-courtroom_85869-8507.jpg'
 
 const NewsDetails = () => {
 
@@ -14,7 +15,6 @@ const NewsDetails = () => {
       const response = await fetch(`https://pioneer.kodbel.com/api/news/${id}/`)
       const data = await response.json()
       setNews(data)
-      console.log(data)
     }
     getNews()
   }, [id])
@@ -29,11 +29,18 @@ const NewsDetails = () => {
 
         <div className=" flex flex-col space-y-3 px-5 w-full">
           <h2 className="text-2xl font-bold pr-1">{news.title}</h2>
-          <h2 className="text-lg font-semibold pr-1">{news.short_Description}</h2>
           <div className='w-full py-5'>
-            <p className=' text-justify text-lg'>{news.full_Description}</p>
+            <p className=' text-justify text-lg'>{news.Description}</p>
           </div>
         </div>
+
+        <div className=' px-5 py-1 flex items-center justify-between gap-3 border-t-2 border-slate-200'>
+            <div className=' flex gap-1 items-center'>
+              <img src={smImg} alt="..." className=' h-10 w-10 rounded-full' />
+              <h2 className=' text-slate-500'>Md. Nazmul Islam</h2>
+            </div>
+            <h2 className=' text-slate-500'>9/6/2023</h2>
+          </div>
       </div>
 
 

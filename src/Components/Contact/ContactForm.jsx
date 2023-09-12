@@ -36,7 +36,7 @@ const ContactForm = () => {
     <div className="flex justify-center">
       <form
         onSubmit={(e) => formSubmit(e)}
-        className="flex flex-col items-start justify-start gap-1 w-full bg-[rgba(255,197,51,0.3)] bg-opacity-90 p-5"
+        className="flex flex-col items-start justify-start gap-1 w-full bg-[rgba(255,197,51,0.5)] bg-opacity-90 p-5"
       >
         <label htmlFor="name" value='Name' className="">Name :</label>
         <input

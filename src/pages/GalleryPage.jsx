@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { UserContext } from '../Components/Context/UseContext'
+import { UserContext } from '../Components/Context/UserContext'
 import Gallery from '../Components/Gallery/Gallery'
 
 

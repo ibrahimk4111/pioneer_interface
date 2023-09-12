@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { UserContext } from '../Context/UseContext'
+import { UserContext } from '../Context/UserContext'
 import ImageView from './ImageView'
 // import { Link } from 'react-router-dom'
 

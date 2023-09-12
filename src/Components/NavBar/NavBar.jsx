@@ -5,7 +5,7 @@ import { HashLink as Link } from "react-router-hash-link";
 
 import { BiMenu } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
-import { UserContext } from "../Context/UseContext";
+import { UserContext } from "../Context/UserContext";
 
 const NavBar = () => {
 
@@ -35,7 +35,7 @@ const NavBar = () => {
                   <>
                     <Link to={`/detailed_service/${1}`} className={classNames}>service</Link>
                     <Link smooth to='/attorneys' className={`${classNames} hidden`}>Attorney</Link>
-                    <Link smooth to={`/newsDetails/${1}`} className={classNames}>News & blog</Link>
+                    <Link smooth to={`/newsDetails/${5}`} className={classNames}>News & blog</Link>
                   </>
                 )
             }
@@ -65,7 +65,7 @@ const NavBar = () => {
                 (<>
                   <Link smooth to='#services' onClick={toggleMenu} className={classNames}>Services</Link>
                   <Link smooth to='#attorneys' onClick={toggleMenu} className={classNames}>Attorneys</Link>
-                  <Link smooth onClick={toggleMenu} to='/news' className={classNames}>News</Link>
+                  <Link smooth to='#news' onClick={toggleMenu} className={classNames}>News</Link>
                 </>
                 ) : (
                   <>

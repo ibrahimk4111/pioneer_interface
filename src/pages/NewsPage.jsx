@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { UserContext } from '../Components/Context/UseContext';
+import { UserContext } from '../Components/Context/UserContext';
 import News from '../Components/News/News'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,7 +18,7 @@ const NewsPage = () => {
 
   return (
     <div className="bg-slate-100 py-10" id='news'>
-      <div className='max-w-[1200px] mx-auto '>
+      <div className=''>
 
         {/* start header of blog section */}
         <div className="flex flex-col justify-center items-center font-serif">
@@ -28,7 +28,7 @@ const NewsPage = () => {
         </div>
 
         {/* start card data mapping */}
-        <div className="flex justify-between items-center pt-5">
+        <div className="max-w-[1200px] mx-auto ">
 
           <Swiper
 
@@ -48,23 +48,27 @@ const NewsPage = () => {
                 spaceBetween: 10
               },
               640: {
-                slidesPerView: 2.1,
-                spaceBetween: 10
+                slidesPerView: 2.2,
+                spaceBetween: 7
               },
               768: {
-                slidesPerView: 3.1,
+                slidesPerView: 2.2,
                 spaceBetween: 10
               },
-              1280: {
-                slidesPerView: 3.1,
+              1024: {
+                slidesPerView: 3.3,
+                spaceBetween: 10
+              },
+              1200: {
+                slidesPerView: 3.3,
                 spaceBetween: 10
               }
             }}
-            className="h-[550px]"
+            
           >
 
             {news_and_blogs.map((news, index) => (
-              <SwiperSlide key={index} className=" pb-10"><News key={index} news={news} index={index} /></SwiperSlide>
+              <SwiperSlide key={index} className=" pt-5 pb-10"><News key={index} news={news} index={index} /></SwiperSlide>
             ))}
 
           </Swiper>

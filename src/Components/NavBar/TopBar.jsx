@@ -41,7 +41,7 @@ const TopBar = () => {
           </div>
 
           {/* appointment */}
-          <Link to="/appointment" className=" md:hidden px-2 py-1  bg-bg-card border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
+          <Link to="/appointment" className=" md:hidden px-2 py-1 border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
                 Book Appointment         
             </Link>
         </div>

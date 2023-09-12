@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { UserContext } from '../Context/UseContext'
+import { UserContext } from '../Context/UserContext'
 
 const OurClients = () => {
   const { text } = useContext(UserContext)

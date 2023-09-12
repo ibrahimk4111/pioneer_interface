@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { UserContext } from "./Context/UseContext";
+import { UserContext } from "./Context/UserContext";
 // import bgImg from '../styles/bg-1.jpg'
 import { Link } from "react-router-dom";
 

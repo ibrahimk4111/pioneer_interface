@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { UserContext } from "../Components/Context/UseContext";
+import { UserContext } from "../Components/Context/UserContext";
 import Attorney from "../Components/Attorney/Attorney";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -42,7 +42,7 @@ const AttorneyPage = () => {
           pagination={{ clickable: true, color: "red" }}
           breakpoints={{
             0: {
-              slidesPerView: 1.3,
+              slidesPerView: 1.1,
               spaceBetween: 10
             },
             640: {
