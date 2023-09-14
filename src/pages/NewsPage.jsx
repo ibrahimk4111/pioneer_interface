@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { motion } from 'framer-motion'
 import { UserContext } from '../Components/Context/UserContext';
 import News from '../Components/News/News'
 // Import Swiper React components
@@ -15,6 +16,20 @@ const NewsPage = () => {
 
   // useContext hook to retrive data
   const { news_and_blogs } = useContext(UserContext)
+  const variants = (index) => ({
+    hidden: {
+      opacity: 0,
+      x: -200
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.2 * index,
+        duration: 1
+      }
+    }
+  })
 
   return (
     <div className="bg-slate-100 py-10" id='news'>
@@ -64,11 +79,22 @@ const NewsPage = () => {
                 spaceBetween: 10
               }
             }}
-            
+
           >
 
             {news_and_blogs.map((news, index) => (
-              <SwiperSlide key={index} className=" pt-5 pb-10"><News key={index} news={news} index={index} /></SwiperSlide>
+
+              <SwiperSlide key={index} className=" pt-5 pb-10">
+                <motion.div
+                  
+                  variants={variants(index)}
+                  initial="hidden"
+                  whileInView="visible"
+                >
+                  <News news={news} index={index} />
+                </motion.div>
+              </SwiperSlide>
+
             ))}
 
           </Swiper>

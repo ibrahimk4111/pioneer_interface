@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import { BiPhoneCall, BiMailSend } from "react-icons/bi";
 import { CiFacebook, CiLinkedin } from 'react-icons/ci';
@@ -7,8 +8,31 @@ import { FiTwitter } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const TopBar = () => {
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: -50,
+
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1,
+        duration: 0.7,
+        type: "tween",
+        stiffness: 300
+      }
+    }
+  }
+
   return (
-    <div className="bg-blue-950 py-1">
+    <motion.div
+      className="bg-blue-950 py-1"
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className=" px-6 py-2 flex flex-col md:flex-row justify-between gap-2">
 
         <div className="flex items-center justify-between md:space-x-6">
@@ -42,11 +66,11 @@ const TopBar = () => {
 
           {/* appointment */}
           <Link to="/appointment" className=" md:hidden px-2 py-1 border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
-                Book Appointment         
-            </Link>
+            Book Appointment
+          </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

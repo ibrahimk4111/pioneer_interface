@@ -6,6 +6,9 @@ export const UserContext = createContext();
 // step 2: creating a mother function or component having all other compnent into it.
 export const TaskProvider = ({ children }) => {
 
+  const mainUrl = 'https://pioneer.kodbel.com'
+  // const mainUrl = 'http://127.0.0.1:8000'
+
   // Start Navigation Section
 
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +35,7 @@ export const TaskProvider = ({ children }) => {
 
   useEffect(() => {
     const getImages = async () => {
-      const response = await fetch("https://pioneer.kodbel.com/api/headers/");
+      const response = await fetch(`${mainUrl}/api/headers/`);
       const data = await response.json();
       setHeader(data);
     };
@@ -45,7 +48,7 @@ export const TaskProvider = ({ children }) => {
 
   useEffect(() => {
     const getServices = async () => {
-      const response = await fetch("https://pioneer.kodbel.com/api/service/");
+      const response = await fetch(`${mainUrl}/api/service/`);
       const data = await response.json();
       setServices(data);
     };
@@ -60,7 +63,7 @@ export const TaskProvider = ({ children }) => {
 
   useEffect(() => {
     const getNews = async () => {
-      const response = await fetch("https://pioneer.kodbel.com/api/news/");
+      const response = await fetch(`${mainUrl}/api/news/`);
       const data = await response.json();
       setNews_and_blogs(data);
     };
@@ -73,7 +76,7 @@ export const TaskProvider = ({ children }) => {
 
   useEffect(() => {
     const getAttorneys = async () => {
-      const response = await fetch("https://pioneer.kodbel.com/api/attorney/");
+      const response = await fetch(`${mainUrl}/api/attorney/`);
       const data = await response.json();
       setAttorneys(data);
     };
@@ -87,7 +90,7 @@ export const TaskProvider = ({ children }) => {
   useEffect(() => {
     const getImages = async () => {
       const response = await fetch(
-        "https://pioneer.kodbel.com/api/imagesForGallery/"
+        `${mainUrl}/api/imagesForGallery/`
       );
       const data = await response.json();
       setImages(data);
@@ -95,6 +98,7 @@ export const TaskProvider = ({ children }) => {
     getImages();
   }, []);
 
+  
   // gallery component's section
   const [current, setCurrent] = useState(0);
   const [modal, setModal] = useState(false);
@@ -131,6 +135,7 @@ export const TaskProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
+        mainUrl,
         isOpen, 
         serviceDirectory,
         setDirectoryFalse,

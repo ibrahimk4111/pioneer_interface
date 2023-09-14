@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { motion } from 'framer-motion'
 import { UserContext } from "./Context/UserContext";
 // import bgImg from '../styles/bg-1.jpg'
 import { Link } from "react-router-dom";
@@ -6,7 +7,23 @@ import { Link } from "react-router-dom";
 
 const HeaderPage = () => {
 
-  const { headers } = useContext(UserContext)
+  const { mainUrl, headers } = useContext(UserContext)
+
+  const [current, setCurrent] = useState(1)
+  //Gallery carousel
+  const prevBtn = async () => {
+    const newIndex = current === 0 ? headers.length - 1 : current - 1;
+    setCurrent(newIndex);
+    console.log(newIndex)
+  };
+
+  const nextBtn = async () => {
+    const newIndex = current === headers.length - 1 ? 0 : current + 1;
+    setCurrent(newIndex);
+    console.log(newIndex)
+  };
+
+
 
   return (
     <>
@@ -14,21 +31,60 @@ const HeaderPage = () => {
       <div className=" w-full h-full md:h-[90vh]">
         {
           headers.map((header, index) => (
-            index === 0 &&
-            <div key={index} className="bg-cover bg-center md:h-[90vh] sm:h-[50vh] h-[70vh]" style={{ backgroundImage: `url(https://pioneer.kodbel.com${header.img})` }}>
-              <div key={index} className=" bg-black bg-opacity-30 h-full w-full flex justify-center items-center ">
-                <div className="flex flex-col max-w-[1200px] text-white w-full h-full items-center justify-center ">
-                  <p className="md:text-3xl text-xl uppercase md:mb-5">Welcome To</p>
-                  <p className=" md:text-5xl sm:text-4xl text-2xl uppercase tracking-widest font-bold">Pioneer Law Associates</p>
-                  <p className="md:w-[60%] w-[80%] my-5 text-justify tracking-wider md:text-lg">Our law firm understands that every client has unique legal needs. That’s why we provide personalized legal services tailored to your specific situation. Our experienced attorneys will work closely with you to develop a customized legal solution that meets your individual needs and achieves your desired outcomes.</p>
-                  <div className=" mt-5 sm:w-[22%] w-40 flex justify-center items-center border-2 border-bg-card hover:bg-bg-card rounded-md transition hover:scale-105 duration-300 ease-in cursor-pointer">
+            index === current &&
+            <motion.div
+              key={index}
+              className="bg-cover bg-center md:h-[90vh] sm:h-[70vh] h-[60vh]"
+              style={{ backgroundImage: `url(${mainUrl}${header.img})` }}
+              initial={{ opacity: 0.5 }}
+              animate={{ opacity: 1, transition: { duration: 3 } }}
+            >
+              <div className="bg-black bg-opacity-30 h-full w-full flex md:flex-row flex-col justify-between md:items-center items-start md:py-10 p-2">
+                <motion.div
+                  className=" cursor-pointer border-2 border-white rounded-full w-10 h-10 flex justify-center items-center transition hover:scale-110 duration-300"
+                  onClick={prevBtn}
+                >
+                  <span className="text-2xl font-extrabold text-white">&#8592;</span>
+                </motion.div>
+               
+                <div className=" md:px-12 px-5 flex flex-col max-w-[1200px] text-white w-full h-full items-start justify-center ">
+                  <motion.p
+                    className="md:text-3xl sm:text-2xl text-xl uppercase md:mb-5"
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } }}
+                  >Welcome To</motion.p>
+                  
+                  <motion.p
+                    className=" md:text-5xl sm:text-3xl text-xl uppercase tracking-widest font-bold"
+                    initial={{ opacity: 0, x: -250 }}
+                    animate={{ opacity: 1, x: 0, transition: { duration: 1.2, delay: 0.5 } }}
+                  >Pioneer Law Associates</motion.p>
+                  
+                  <motion.p
+                    className="lg:w-[70%] my-5 text-justify tracking-wider md:text-lg"
+                    initial={{ opacity: 0, x: -500 }}
+                    animate={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
+                  >Our law firm understands that every client has unique legal needs. That’s why we provide personalized legal services tailored to your specific situation. Our experienced attorneys will work closely with you to develop a customized legal solution that meets your individual needs and achieves your desired outcomes.</motion.p>
+
+                  <motion.div
+                    className=" mt-5 sm:w-[22%] w-40 flex justify-center items-center border-2 border-bg-card hover:bg-bg-card rounded-md transition hover:scale-105 duration-300 ease-in cursor-pointer"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 1.2 } }}
+                  >
                     <Link to="/contact" className="p-1 md:text-xl text-sm uppercase">
                       Contact us
                     </Link>
-                  </div>
+                  </motion.div>
                 </div>
+
+                <motion.div
+                  className=" cursor-pointer border-2 border-white rounded-full w-10 h-10 flex justify-center items-center transition hover:scale-110 duration-300"
+                  onClick={nextBtn}
+                >
+                  <span className="text-2xl font-extrabold text-white">&#8594;</span>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))
         }
       </div>

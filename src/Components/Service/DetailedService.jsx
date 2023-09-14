@@ -5,7 +5,7 @@ import { HiScale } from 'react-icons/hi'
 
 const DetailedService = () => {
 
-  const { services, setDirectoryFalse } = useContext(UserContext)
+  const { mainUrl, services, setDirectoryFalse } = useContext(UserContext)
 
   //Single service section 
   const [singleService, setSingleService] = useState({})
@@ -14,12 +14,12 @@ const DetailedService = () => {
 
   useEffect(() => {
     const getService = async () => {
-      const response = await fetch(`https://pioneer.kodbel.com/api/service/${id}/`)
+      const response = await fetch(`${mainUrl}/api/service/${id}/`)
       const data = await response.json()
       setSingleService(data)
     }
     getService()
-  }, [id])
+  }, [id, mainUrl])
 
   console.log(singleService)
 
@@ -27,7 +27,7 @@ const DetailedService = () => {
     <div className="max-w-[1200px] mx-auto h-auto md:py-10 py-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-2">
 
       <div className=' flex flex-col justify-start gap-10 h-auto border-2 border-slate-300 lg:col-span-2 md:col-span-2 overflow-hidden'>
-        <img className=" object-cover h-80 duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${singleService.img}`} alt='...' />
+        <img className=" object-cover h-80 duration-300 hover:scale-105" src={`${mainUrl}${singleService.img}`} alt='...' />
 
         <div className=" flex flex-col space-y-3 px-3 w-full">
           <h2 className="text-2xl font-bold py-2 bg-slate-50 text-center">{singleService.title}</h2>

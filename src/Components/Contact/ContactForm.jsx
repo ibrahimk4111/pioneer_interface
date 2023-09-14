@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../Context/UserContext";
 
 const ContactForm = () => {
+
+  const {mainUrl} = useContext(UserContext)
 
   const navigate = useNavigate()
 
@@ -15,7 +18,7 @@ const ContactForm = () => {
   const formSubmit = (e) => {
     e.preventDefault();
 
-    fetch('https://pioneer.kodbel.com/api/contact/',{
+    fetch(`${mainUrl}/api/contact/`,{
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -24,7 +27,12 @@ const ContactForm = () => {
     })
 
     navigate("/")
-    console.log(contact)
+    setContact({
+      Name: "",
+      Phone: "",
+      Email: "",
+      Description: ""
+    })
   };
 
   const dataInput = (e) =>{
@@ -68,7 +76,7 @@ const ContactForm = () => {
           onChange={dataInput}
           required
         />
-        <label htmlFor="desc" className="">Your Description :</label>
+        <label htmlFor="desc" className="">Message :</label>
         <textarea
           name="Description"
           id=""

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../Components/Context/UserContext";
+import { motion } from 'framer-motion'
 import Service from "../Components/Service/Service";
 import { Link } from "react-router-dom";
 
@@ -8,6 +9,21 @@ const ServicePage = () => {
 
   // useContext hook to call data
   const { services } = useContext(UserContext)
+
+  const variants = (index) => ({
+    hidden: {
+      opacity: 0,
+      y: -200
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.2 * index,
+        duration: 1
+      }
+    }
+  })
 
   return (
     <div className=" py-10" id="services">
@@ -23,8 +39,14 @@ const ServicePage = () => {
       <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-5 max-w-[1240px] mx-auto">
         {services.map((service, index) => (
           index <= 7 &&
-          <Service key={index} service={service} index={index} />
-
+            <motion.div
+              key={index}
+              variants={variants(index)}
+              initial="hidden"
+              whileInView="visible"
+            >
+              <Service service={service} index={index} />
+            </motion.div>
         ))}
       </div>
 

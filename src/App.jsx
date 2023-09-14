@@ -1,5 +1,6 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import { AnimatePresence } from "framer-motion";
 
 import { TaskProvider } from "./Components/Context/UserContext";
 
@@ -19,20 +20,22 @@ import Person from "./Components/Attorney/Person";
 function App() {
   return (
     <TaskProvider>
-      <Router>
-        <Navigationbar />
-        <Routes>
-          <Route path="/" exact Component={Home} />
-          <Route path="/contact" Component={ContactPage} />
-          <Route path="/gallery" Component={GalleryPage} />
-          <Route path="/appointment" Component={AppointmentPage} />
-          <Route path="/detailed_service/:id" Component={DetailedService} />
-          <Route path="/newsDetails/:id" Component={NewsDetails} />
-          <Route path="/attorney/:id" Component={Person} />
-        </Routes>
-        <Footer />
-        <TopButton />
-      </Router>
+      <AnimatePresence>
+        <Router>
+          <Navigationbar />
+          <Routes>
+            <Route path="/" exact Component={Home} />
+            <Route path="/contact" Component={ContactPage} />
+            <Route path="/gallery" Component={GalleryPage} />
+            <Route path="/appointment" Component={AppointmentPage} />
+            <Route path="/detailed_service/:id" Component={DetailedService} />
+            <Route path="/newsDetails/:id" Component={NewsDetails} />
+            <Route path="/attorney/:id" Component={Person} />
+          </Routes>
+          <Footer />
+          <TopButton />
+        </Router>
+      </AnimatePresence>
     </TaskProvider>
   );
 }

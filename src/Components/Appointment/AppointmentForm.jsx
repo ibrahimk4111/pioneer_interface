@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import appointmentImg from '../../styles/appointment.jpg'
 
 import { useNavigate } from 'react-router-dom'
+import { UserContext } from "../Context/UserContext";
 
 const AppointmentForm = () => {
+    const { mainUrl } = useContext(UserContext)
 
     const navigate = useNavigate()
 
@@ -17,7 +20,7 @@ const AppointmentForm = () => {
     const formSubmit = (e) => {
         e.preventDefault();
 
-        fetch('https://pioneer.kodbel.com/api/appointment/', {
+        fetch(`${mainUrl}/api/appointment/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,9 +29,7 @@ const AppointmentForm = () => {
         })
         navigate("/")
 
-
         console.log(appointment)
-
     };
 
     const dataInput = (e) => {
@@ -37,10 +38,14 @@ const AppointmentForm = () => {
 
 
     return (
-        <div className="py-5 flex justify-center">
+        <div className="max-w-[1000px] mx-auto py-5 flex md:flex-row flex-col">
+            <div className="">
+                <img src={appointmentImg} alt="" />
+            </div>
+
             <form
                 onSubmit={(e) => formSubmit(e)}
-                className="flex flex-col items-start justify-start gap-1 w-full bg-bg-card rounded-md p-5"
+                className=" max-w-[700px] mx-auto bg-bg-card flex flex-col items-start justify-start gap-1 w-full p-5"
             >
 
                 <label className=" text-white" htmlFor="name" value='Name'>Name :</label>
@@ -80,21 +85,20 @@ const AppointmentForm = () => {
                 <input
                     type="date"
                     name="Date"
-                    className="w-full rounded-md h-10 focus:outline-none p-2"
+                    className="w-full rounded-md h-10 focus:outline-none p-2 text-slate-400"
                     onChange={dataInput}
                     value={appointment.Date}
                     required
                 />
 
-                <label className=" text-white" htmlFor="desc">Topic Descriptions :</label>
+                <label className=" text-white" htmlFor="desc">Message :</label>
                 <textarea
                     name="Description"
                     cols="30"
-                    rows="10"
+                    rows="6"
                     className=" w-full rounded-md focus:outline-none p-2"
                     value={appointment.Description}
                     onChange={dataInput}
-                    required
                 ></textarea>
 
                 <button

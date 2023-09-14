@@ -5,9 +5,9 @@ import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
 
 const ImageView = () => {
 
-    const { prevBtn, nextBtn, current, images, toggleModal } = useContext(UserContext)
-
+    const { mainUrl, prevBtn, nextBtn, current, images, toggleModal } = useContext(UserContext)
     const classNames = 'cursor-pointer rounded-full bg-white'
+    
 
     return (
 
@@ -22,7 +22,7 @@ const ImageView = () => {
                 </div>
 
                 <div className=' flex justify-center items-center'>
-                    <img src={`https://pioneer.kodbel.com${images[current].img}`} alt="..." className=' w-auto h-auto max-w-[90%] max-h-[90%]' />
+                    <img src={`${mainUrl}${images[current].img}`} alt="..." className=' w-auto h-auto max-w-[90%] max-h-[90%]' />
                 </div>
 
                 <div>

@@ -9,26 +9,26 @@ import { FiTwitter } from "react-icons/fi";
 
 const Person = () => {
 
-  const { attorneys, setDirectoryFalse } = useContext(UserContext)
+  const {mainUrl, attorneys, setDirectoryFalse } = useContext(UserContext)
 
   const [person, setPerson] = useState({})
   const { id } = useParams()
 
   useEffect(() => {
     const getAttorney = async () => {
-      const response = await fetch(`https://pioneer.kodbel.com/api/attorney/${id}/`)
+      const response = await fetch(`${mainUrl}/api/attorney/${id}/`)
       const data = await response.json()
       setPerson(data)
     }
     getAttorney()
-  }, [id])
+  }, [id, mainUrl])
 
   return (
     <div className="max-w-[1200px] mx-auto h-auto md:py-10 py-5 grid md:grid-cols-4 grid-cols-1 gap-5 ">
 
       <div className='grid md:grid-cols-3 grid-cols-1 col-span-3 h-auto border-2 border-slate-300 overflow-hidden'>
         <div className=' flex justify-center items-center bg-bg-card'>
-          <img className=" object-cover object-top h-96" src={`https://pioneer.kodbel.com${person.img}`} alt='...' />
+          <img className=" object-cover object-top h-96" src={`${mainUrl}${person.img}`} alt='...' />
         </div>
 
         <div className=" flex flex-col space-y-3 p-3 w-full col-span-2">
@@ -73,7 +73,7 @@ const Person = () => {
           attorneys.map((person, index) => (
             <Link key={index} to={`/attorney/${person.id}`} onClick={setDirectoryFalse} className='active:bg-bg-card focus:text-white focus:bg-bg-card bg-slate-50'>
               <div className='w-full flex items-center gap-5'>
-                <img className=" object-cover object-top w-12 h-12" src={`https://pioneer.kodbel.com${person.img}`} alt='...' />
+                <img className=" object-cover object-top w-12 h-12" src={`${mainUrl}${person.img}`} alt='...' />
                 <p className='text-lg p-2'>{person.attr_name}</p>
               </div>
             </Link>
