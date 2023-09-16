@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
+import {motion} from 'framer-motion';
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../Context/UserContext";
 
 const ContactForm = () => {
 
-  const {mainUrl} = useContext(UserContext)
+  const { mainUrl } = useContext(UserContext)
 
   const navigate = useNavigate()
 
@@ -18,7 +19,7 @@ const ContactForm = () => {
   const formSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`${mainUrl}/api/contact/`,{
+    fetch(`${mainUrl}/api/contact/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -35,13 +36,33 @@ const ContactForm = () => {
     })
   };
 
-  const dataInput = (e) =>{
-    setContact({...contact, [e.target.name]: e.target.value})
+  const dataInput = (e) => {
+    setContact({ ...contact, [e.target.name]: e.target.value })
   }
- 
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: -100
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.3,
+        duration: 1
+      }
+    }
+  }
+
 
   return (
-    <div className="flex justify-center">
+    <motion.div
+      className="flex justify-center"
+      variants={variants}
+      initial="hidden"
+      whileInView="visible"
+    >
       <form
         onSubmit={(e) => formSubmit(e)}
         className="flex flex-col items-start justify-start gap-1 w-full bg-[rgba(255,197,51,0.5)] bg-opacity-90 p-5"
@@ -95,7 +116,7 @@ const ContactForm = () => {
           Submit
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

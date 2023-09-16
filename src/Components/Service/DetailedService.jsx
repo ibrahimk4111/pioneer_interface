@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import { UserContext } from '../Context/UserContext'
-import { HiScale } from 'react-icons/hi'
+import { motion } from 'framer-motion';
+import { useParams, Link } from 'react-router-dom';
+import { UserContext } from '../Context/UserContext';
+import { HiScale } from 'react-icons/hi';
 
 const DetailedService = () => {
 
@@ -21,12 +22,31 @@ const DetailedService = () => {
     getService()
   }, [id, mainUrl])
 
-  console.log(singleService)
+
+  const variants = (index) => ({
+    hidden: {
+      opacity: 0,
+      x: 100
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.2 * index,
+        duration: 1
+      }
+    }
+  })
+
 
   return (
     <div className="max-w-[1200px] mx-auto h-auto md:py-10 py-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-2">
 
-      <div className=' flex flex-col justify-start gap-10 h-auto border-2 border-slate-300 lg:col-span-2 md:col-span-2 overflow-hidden'>
+      <motion.div
+        className=' flex flex-col justify-start gap-10 h-auto border-2 border-slate-300 lg:col-span-2 md:col-span-2 overflow-hidden'
+        initial={{scale: 0, opacity: 0}}
+        animate={{scale: 1, opacity: 1, transition:{duration: 0.5}}}
+      >
         <img className=" object-cover h-80 duration-300 hover:scale-105" src={`${mainUrl}${singleService.img}`} alt='...' />
 
         <div className=" flex flex-col space-y-3 px-3 w-full">
@@ -40,7 +60,7 @@ const DetailedService = () => {
             <p className=' text-justify text-lg'>{singleService.full_Description}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
 
 
@@ -49,10 +69,15 @@ const DetailedService = () => {
         {
           services.map((item, index) => (
             <Link key={index} to={`/detailed_service/${item.id}`} onClick={setDirectoryFalse} className='active:bg-bg-card focus:text-white focus:bg-bg-card bg-slate-50'>
-              <div className='text-2xl w-full flex gap-5'>
+              <motion.div
+                className='text-2xl w-full flex gap-5'
+                variants={variants(index)}
+                initial="hidden"
+                whileInView="visible"
+              >
                 <span className='bg-bg-card text-white p-2'><HiScale /></span>
                 <span className=' p-2'>{item.title}</span>
-              </div>
+              </motion.div>
             </Link>
 
           ))

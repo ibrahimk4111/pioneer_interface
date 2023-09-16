@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
-import appointmentImg from '../../styles/appointment.jpg'
+import { motion } from 'framer-motion';
+import appointmentImg from '../../styles/appointment.jpg';
 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from "../Context/UserContext";
 
 const AppointmentForm = () => {
@@ -36,16 +37,37 @@ const AppointmentForm = () => {
         setAppointment({ ...appointment, [e.target.name]: e.target.value })
     }
 
+    const variants = (xValue) => ({
+        hidden: {
+            opacity: 0,
+            x: xValue
+        },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                delay: 0.3,
+                duration: 1
+            }
+        }
+    })
 
     return (
         <div className="max-w-[1000px] mx-auto py-5 flex md:flex-row flex-col">
-            <div className="">
+            <motion.div
+                variants={variants(-100)}
+                initial="hidden"
+                whileInView="visible"
+            >
                 <img src={appointmentImg} alt="" />
-            </div>
+            </motion.div>
 
-            <form
+            <motion.form
                 onSubmit={(e) => formSubmit(e)}
                 className=" max-w-[700px] mx-auto bg-bg-card flex flex-col items-start justify-start gap-1 w-full p-5"
+                variants={variants(-200)}
+                initial="hidden"
+                whileInView="visible"
             >
 
                 <label className=" text-white" htmlFor="name" value='Name'>Name :</label>
@@ -107,7 +129,7 @@ const AppointmentForm = () => {
                 >
                     Submit
                 </button>
-            </form>
+            </motion.form>
         </div>
     );
 };

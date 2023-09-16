@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from 'framer-motion'
 
 import { Link } from "react-router-dom";
 
@@ -8,8 +9,29 @@ import { FiTwitter } from "react-icons/fi";
 import { TfiLocationPin } from "react-icons/tfi"
 
 const ContactAddress = () => {
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: -200
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.3,
+        duration: 1
+      }
+    }
+  }
+
   return (
-    <div className="md:px-10 p-5 font-semibold bg-bg-card text-white h-full flex justify-center items-center">
+    <motion.div
+      className="md:px-10 p-5 font-semibold bg-bg-card text-white h-full flex justify-center items-center"
+      variants={variants}
+      initial="hidden"
+      whileInView="visible"
+    >
       <div className="flex flex-col gap-2">
         <div className=" flex flex-col gap-3">
           <h2 className=" md:text-4xl text-2xl"> __ Connect with us today</h2>
@@ -53,7 +75,7 @@ const ContactAddress = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
