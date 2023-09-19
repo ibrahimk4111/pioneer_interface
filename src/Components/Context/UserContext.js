@@ -10,7 +10,6 @@ export const TaskProvider = ({ children }) => {
   // const mainUrl = 'http://127.0.0.1:8000'
 
   // Start Navigation Section
-
   const [isOpen, setIsOpen] = useState(false);
   const [serviceDirectory, setSerivceDirectory] = useState(true)
 
@@ -27,7 +26,6 @@ export const TaskProvider = ({ children }) => {
     setSerivceDirectory(true)
     console.log(serviceDirectory)
   }
-
   // End Navigation Section
 
   // Start Header Sections data
@@ -54,8 +52,6 @@ export const TaskProvider = ({ children }) => {
     };
     getServices();
   }, []);
-
-
   // End Services Sections data
 
   // Start news and blogs Section data
@@ -97,8 +93,6 @@ export const TaskProvider = ({ children }) => {
     };
     getImages();
   }, []);
-
-  
   // gallery component's section
   const [current, setCurrent] = useState(0);
   const [modal, setModal] = useState(false);
@@ -109,7 +103,6 @@ export const TaskProvider = ({ children }) => {
     setCurrent(id);
   };
 
-
   if (modal) {
     document.body.classList.add("active-modal");
   } else {
@@ -117,7 +110,6 @@ export const TaskProvider = ({ children }) => {
   }
 
   // imageView component's functions
-  
   //Gallery carousel
   const prevBtn = async () => {
     const newIndex = current === 0 ? images.length - 1 : current - 1;
@@ -128,7 +120,6 @@ export const TaskProvider = ({ children }) => {
     const newIndex = current === images.length - 1 ? 0 : current + 1;
     setCurrent(newIndex);
   };
-
   // End Gallery Sections data
 
 

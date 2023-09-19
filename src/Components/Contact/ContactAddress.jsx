@@ -69,7 +69,7 @@ const ContactAddress = () => {
         </div>
 
         {/* appointment  */}
-        <div className="mt-5 transition hover:scale-105 duration-300 ease-in-out flex justify-center items-center border-2 border-white hover:bg-white hover:text-black bg-opacity-75 rounded-md cursor-pointer">
+        <div className="w-40 mt-5 transition hover:scale-105 duration-300 ease-in-out flex justify-center items-center border-2 border-white hover:bg-white hover:text-black bg-opacity-75 rounded-md cursor-pointer">
           <Link to="/appointment" className="p-1 text-sm">
             Book Appointment
           </Link>

@@ -82,7 +82,7 @@ const ContactForm = () => {
           type="number"
           name="Phone"
           className=" w-full rounded-md h-10 focus:outline-none p-2"
-          placeholder="(+88) 01517-833 878"
+          placeholder="01711-108120"
           value={contact.Phone}
           onChange={dataInput}
           required

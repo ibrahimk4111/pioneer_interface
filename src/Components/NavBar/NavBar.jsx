@@ -134,7 +134,7 @@ const NavBar = () => {
                   <>
                     <Link to={`/detailed_service/${1}`} onClick={toggleMenu} className={classNames}>services</Link>
                     <Link to='/' className={`${classNames} hidden`}>Attorney</Link>
-                    <Link to={`/newsDetails/${5}`} className={classNames}>News & Blogs</Link>
+                    <Link to={`/newsDetails/${5}`} onClick={toggleMenu} className={classNames}>News & Blogs</Link>
                     <Link to="/client" className={`${classNames} hidden`}>Clients</Link>
                   </>
                 )
