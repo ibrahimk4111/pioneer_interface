@@ -56,10 +56,10 @@ const TopBar = () => {
             <Link to="https://www.facebook.com/" target="_blank">
               <CiFacebook className=" text-white text-xl  transition hover:scale-110 duration-300 ease-in-out" />
             </Link>
-            <Link to="https://www.youtube.com/" target="_blank">
+            <Link to="https://www.linkedin.com/" target="_blank">
               <CiLinkedin className=" text-white text-2xl  transition hover:scale-110 duration-300 ease-in-out" />
             </Link>
-            <Link to="https://www.linkedin.com/" target="_blank">
+            <Link to="https://www.twitter.com/" target="_blank">
               <FiTwitter className=" transition hover:scale-110 duration-300 ease-in-out text-white text-xl" />
             </Link>
           </div>

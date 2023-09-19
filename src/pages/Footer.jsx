@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-blue-950 text-white">
-      <div className=" px-12 py-6">
+      <div className=" md:px-12 px-5 py-6">
 
         <div className=" grid lg:grid-cols-4 gap-4">
           <div className="col-span-2">
@@ -85,10 +85,13 @@ const Footer = () => {
         </div>
 
         {/* copyright reserved */}
-        <div className="mt-5">
+        <div className="mt-5 flex md:flex-row flex-col justify-between">
           <p className=" text-sm">
             &copy; All Rights Reserved to <Link to='/' className="text-yellow-600">PIONEER LAW ASSOCIATES</Link>
+          </p>
 
+          <p className=" text-sm">
+            Designed and Developed by <Link to='/' className="text-yellow-200">Md. Ibrahim Khalil</Link>
           </p>
         </div>
       </div>

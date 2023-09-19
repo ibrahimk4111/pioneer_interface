@@ -39,19 +39,19 @@ const ContactAddress = () => {
         </div>
         {/* address particle */}
         <div className=" flex items-center gap-2">
-          <TfiLocationPin size={25} className="bg-white rounded-full p-1 text-blue-900" />
+          <TfiLocationPin size={25} className="bg-white rounded-full p-1 text-black" />
           <p>70, Pioneer Road, Kakrail, Segun Bagicha, Dhaka-1000.</p>
         </div>
 
         {/* phone call */}
         <div className=" flex items-center gap-2">
-          <BiPhoneCall size={25} className="bg-white rounded-full p-1 text-blue-900" />
+          <BiPhoneCall size={25} className="bg-white rounded-full p-1 text-black" />
           <Link to="/">(+88) 01711-108120 </Link>
         </div>
 
         {/* Email  */}
         <div className=" flex items-center gap-2">
-          <BiMailSend size={25} className="bg-white rounded-full p-1 text-blue-900" />
+          <BiMailSend size={25} className="bg-white rounded-full p-1 text-black" />
           <Link to="/"> admozibur@gmail.com </Link>
         </div>
 
@@ -69,7 +69,7 @@ const ContactAddress = () => {
         </div>
 
         {/* appointment  */}
-        <div className="mt-5 transition hover:scale-105 duration-300 ease-in-out flex justify-center items-center border-2 border-white hover:bg-white hover:text-blue-900 bg-opacity-75 rounded-md cursor-pointer">
+        <div className="mt-5 transition hover:scale-105 duration-300 ease-in-out flex justify-center items-center border-2 border-white hover:bg-white hover:text-black bg-opacity-75 rounded-md cursor-pointer">
           <Link to="/appointment" className="p-1 text-sm">
             Book Appointment
           </Link>

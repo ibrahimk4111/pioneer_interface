@@ -10,7 +10,7 @@ import { UserContext } from "../Context/UserContext";
 
 function NavButton({ children }) {
   // tailwind css
-  const classNames = 'p-2 font-semibold hover:bg-[#ce940049] rounded-md transition duration-500'
+  const classNames = ' lg:text-xl text-lg p-2 font-semibold hover:bg-[#ce940049] rounded-md transition duration-500'
   return (
     <motion.button
       className={classNames}
@@ -72,6 +72,9 @@ const NavBar = () => {
                   <Link smooth to='#news'>
                     <NavButton>News & Blogs</NavButton>
                   </Link>
+                  <Link smooth to='#client'>
+                    <NavButton>Clients</NavButton>
+                  </Link>
                 </>
                 ) : (
                   <>
@@ -84,6 +87,9 @@ const NavBar = () => {
                     <Link smooth to={`/newsDetails/${5}`}>
                       <NavButton>News & Blogs</NavButton>
                     </Link>
+                    <Link smooth to='/client' className='hidden'>
+                    <NavButton>Clients</NavButton>
+                  </Link>
                   </>
                 )
             }
@@ -107,7 +113,11 @@ const NavBar = () => {
           </div>
         </motion.div>
 
-        <div className={`md:hidden transition ease-in-out duration-1000 ${isOpen ? ' translate-x-0' : ' translate-x-[100%]'}`} >
+        <motion.div 
+        className='md:hidden transition ease-in-out duration-1000' 
+        initial={{y:-100}}
+        animate={{y:0, transition:{duration:2}}}
+        >
           <div className={isOpen ? "flex flex-col gap-1 px-6 py-3" : "hidden"} >
 
             <Link onClick={() => { toggleMenu(); DirectoryTrue() }} to='/' className={classNames}>Home</Link>
@@ -118,12 +128,14 @@ const NavBar = () => {
                   <Link smooth to='#services' onClick={toggleMenu} className={classNames}>Services</Link>
                   <Link smooth to='#attorneys' onClick={toggleMenu} className={classNames}>Attorneys</Link>
                   <Link smooth to='#news' onClick={toggleMenu} className={classNames}>News</Link>
+                  <Link smooth to='#client' onClick={toggleMenu} className={classNames}>Clients</Link>
                 </>
                 ) : (
                   <>
-                    <Link to={`/detailed_service/${1}`} onClick={toggleMenu} className={classNames}>service</Link>
+                    <Link to={`/detailed_service/${1}`} onClick={toggleMenu} className={classNames}>services</Link>
                     <Link to='/' className={`${classNames} hidden`}>Attorney</Link>
-                    <Link to={`/newsDetails/${1}`} className={classNames}>News</Link>
+                    <Link to={`/newsDetails/${5}`} className={classNames}>News & Blogs</Link>
+                    <Link to="/client" className={`${classNames} hidden`}>Clients</Link>
                   </>
                 )
             }
@@ -133,7 +145,7 @@ const NavBar = () => {
             <Link onClick={() => { toggleMenu(); setDirectoryFalse() }} to='/contact' className={classNames}>Contact</Link>
 
           </div>
-        </div>
+        </motion.div>
 
 
       </motion.div>

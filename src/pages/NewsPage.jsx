@@ -19,11 +19,11 @@ const NewsPage = () => {
   const variants = (index) => ({
     hidden: {
       opacity: 0,
-      x: -200
+      y: -200
     },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         delay: 0.2 * index,
         duration: 1

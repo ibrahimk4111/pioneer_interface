@@ -80,7 +80,7 @@ const AboutDes = () => {
           </div>
         </div>
 
-        <div className='h-full flex md:flex-row flex-col justify-center items-start gap-5 border-2 border-slate-200 rounded-md p-5'>
+        <motion.div className='h-full flex md:flex-row flex-col justify-center md:items-start items-center gap-5 border-2 border-slate-200 rounded-md p-5'>
           <motion.img src={headImg} alt="..." className='lg:h-[80vh] sm:h-[90vh]'
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1, transition: { duration: 1, type: "tween", delay: 0.5 } }}
@@ -88,20 +88,20 @@ const AboutDes = () => {
           <div>
               <motion.h2
                 className=' md:text-3xl text-xl text-blue-950 uppercase border-b-2 border-slate-200 text-center'
-                initial={{ x: 100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1, transition: { duration: 1, type: "tween", delay: 0.5 } }}
+                initial={{ scale: 0.7, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1, transition: { duration: 1, type: "tween", delay: 0.5 } }}
               >
                 Head of Pioneer Law Associates
               </motion.h2>
               <motion.p
                 className=' md:px-12 px-5 py-5 md:text-lg text-justify'
-                initial={{ x: 100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1, transition: { duration: 1, type: "tween", delay: 0.7 } }}
+                initial={{ scale: 0.7, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1, transition: { duration: 1, type: "tween", delay: 0.7 } }}
               >
                 is a practicing lawyer who studied law from University of London and was thereafter called to the Bar Council of England and Wales as a Barrister-at-Law from The Honourable Society of Lincoln’s Inn after successful completion of his Bar Professional Training Course from City University London. He has been enrolled in the Bangladesh Bar Council as an Advocate and subsequently has become an Advocate of Supreme Court of Bangladesh. He had been associated with eminent law firms in Bangladesh such as Syed Ishtiaq Ahmed & Associates, Moudud Ahmed & Associates, Tasmia Prodhan and Associates and The Legal Sanctuary. Currently he is practicing in the High Court Division of the Supreme Court of Bangladesh. He has in depth experience in Civil, Criminal, Banking, Non-Banking Commercial Matters, Company Matters, Income Tax Matters, Family Matters and Arbitration Matters. He has gained vast knowledge of all kinds of drafting and legal vettings and he has been working in the legal arena in different positions for more than 8 (eight) years.
               </motion.p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
