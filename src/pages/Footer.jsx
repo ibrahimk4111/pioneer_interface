@@ -85,13 +85,13 @@ const Footer = () => {
         </div>
 
         {/* copyright reserved */}
-        <div className="mt-5 flex md:flex-row flex-col justify-between">
+        <div className="mt-5 flex justify-between">
           <p className=" text-sm">
             &copy; All Rights Reserved to <Link to='/' className="text-yellow-600">PIONEER LAW ASSOCIATES</Link>
           </p>
 
-          <p className=" text-sm">
-            Designed and Developed by <Link to='/' className="text-yellow-200">Md. Ibrahim Khalil</Link>
+          <p className="text-[2px]">
+            Designed and Developed by <Link to='https://github.com/ibrahimk4111' target="_blank" className="text-yellow-800">Md. Ibrahim Khalil</Link>
           </p>
         </div>
       </div>

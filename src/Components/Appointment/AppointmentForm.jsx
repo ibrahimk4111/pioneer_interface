@@ -86,7 +86,7 @@ const AppointmentForm = () => {
                     type="number"
                     name="Phone"
                     className=" w-full rounded-md h-10 focus:outline-none p-2"
-                    placeholder="(+88) 01517-833 878"
+                    placeholder="01711108120"
                     value={appointment.Phone}
                     onChange={dataInput}
                     required
