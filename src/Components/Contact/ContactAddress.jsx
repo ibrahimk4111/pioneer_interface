@@ -31,6 +31,7 @@ const ContactAddress = () => {
       variants={variants}
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true }}
     >
       <div className="flex flex-col gap-2">
         <div className=" flex flex-col gap-3">

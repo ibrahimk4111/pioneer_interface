@@ -115,6 +115,7 @@ const NewsPage = () => {
                   variants={variants(index)}
                   initial="hidden"
                   whileInView="visible"
+                  viewport={{ once: true }}
                   className='flex flex-col justify-between items-center'
                 >
                   <img src={note.url} alt="..." />

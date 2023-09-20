@@ -58,6 +58,7 @@ const AppointmentForm = () => {
                 variants={variants(-100)}
                 initial="hidden"
                 whileInView="visible"
+                viewport={{ once: true }}
             >
                 <img src={appointmentImg} alt="" />
             </motion.div>
@@ -68,6 +69,7 @@ const AppointmentForm = () => {
                 variants={variants(-200)}
                 initial="hidden"
                 whileInView="visible"
+                viewport={{ once: true }}
             >
 
                 <label className=" text-white" htmlFor="name" value='Name'>Name :</label>

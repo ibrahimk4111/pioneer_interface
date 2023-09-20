@@ -37,7 +37,8 @@ const HeaderPage = () => {
               className="bg-cover bg-center md:h-[90vh] sm:h-[70vh] h-[60vh]"
               style={{ backgroundImage: `url(${mainUrl}${header.img})` }}
               initial={{ opacity: 0.5 }}
-              animate={{ opacity: 1, transition: { duration: 3 } }}
+              whileInView={{ opacity: 1, transition: { duration: 3 } }}
+              viewport={{ once: true }}
             >
               <div className="bg-black bg-opacity-30 h-full w-full flex md:flex-row flex-col justify-between md:items-center items-start md:py-10 p-2">
                 <motion.div
@@ -51,25 +52,29 @@ const HeaderPage = () => {
                   <motion.p
                     className="md:text-3xl sm:text-2xl text-xl uppercase md:mb-5"
                     initial={{ opacity: 0, x: -100 }}
-                    animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } }}
+                    whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } }}
+                    viewport={{ once: true }}
                   >Welcome To</motion.p>
                   
                   <motion.p
                     className=" md:text-5xl sm:text-3xl text-xl uppercase tracking-widest font-bold"
                     initial={{ opacity: 0, x: -250 }}
-                    animate={{ opacity: 1, x: 0, transition: { duration: 1.2, delay: 0.5 } }}
+                    whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2, delay: 0.5 } }}
+                    viewport={{ once: true }}
                   >Pioneer Law Associates</motion.p>
                   
                   <motion.p
                     className="lg:w-[70%] my-5 text-justify tracking-wider md:text-lg"
                     initial={{ opacity: 0, x: -500 }}
-                    animate={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
+                    whileInView={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
+                    viewport={{ once: true }}
                   >Our law firm understands that every client has unique legal needs. That’s why we provide personalized legal services tailored to your specific situation. Our experienced attorneys will work closely with you to develop a customized legal solution that meets your individual needs and achieves your desired outcomes.</motion.p>
 
                   <motion.div
                     className=" mt-5 sm:w-[22%] w-40 flex justify-center items-center border-2 border-bg-card hover:bg-bg-card rounded-md transition hover:scale-105 duration-300 ease-in cursor-pointer"
                     initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 1.2 } }}
+                    whileInView={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 1.2 } }}
+                    viewport={{ once: true }}
                   >
                     <Link to="/contact" className="p-1 md:text-xl text-sm uppercase">
                       Contact us

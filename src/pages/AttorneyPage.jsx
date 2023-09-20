@@ -85,6 +85,7 @@ const AttorneyPage = () => {
               variants={variants(index)}
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
               >
                 <Attorney key={index} attorney={attorney} index={index} />
               </motion.div>

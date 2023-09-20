@@ -44,6 +44,7 @@ const ServicePage = () => {
               variants={variants(index)}
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
             >
               <Service service={service} index={index} />
             </motion.div>

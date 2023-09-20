@@ -56,7 +56,8 @@ const AboutDes = () => {
           <motion.p
             className='md:w-[65%] w-[100%] text-justify p-5 md:text-lg'
             initial={{ scale: 0 }}
-            animate={{ scale: 1, transition: { duration: 1 } }}
+            whileInView={{ scale: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}
           >
             Espinal Law with offices in Miami and Orlando services the entire state of Florida in matters dealing with Personal Injury, Wrongful Death, Criminal Defense and Homeowner’s Insurance Claims. Espinal Law prides itself in zealous advocacy, responsible representation and professionalism.
           </motion.p>
@@ -71,6 +72,7 @@ const AboutDes = () => {
                   initial="hidden"
                   whileInView="visible"
                   custom={index}
+                  viewport={{ once: true }}
                 >
                   <h2 className='text-lg md:px-2 px-1 border-r-2 border-slate-400'>{categorie.id}</h2>
                   <h3 className='md:text-lg text-base md:px-2 px-1'>{categorie.text}</h3>
@@ -84,12 +86,14 @@ const AboutDes = () => {
           <motion.img src={headImg} alt="..." className='lg:h-[80vh] sm:h-[90vh]'
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1, transition: { duration: 1, type: "tween", delay: 0.5 } }}
+            viewport={{ once: true }}
           />
           <div>
               <motion.h2
                 className=' md:text-3xl text-xl text-blue-950 uppercase border-b-2 border-slate-200 text-center'
                 initial={{ scale: 0.7, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1, transition: { duration: 1, type: "tween", delay: 0.5 } }}
+                viewport={{ once: true }}
               >
                 Head of Pioneer Law Associates
               </motion.h2>
@@ -97,6 +101,7 @@ const AboutDes = () => {
                 className=' md:px-12 px-5 py-5 md:text-lg text-justify'
                 initial={{ scale: 0.7, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1, transition: { duration: 1, type: "tween", delay: 0.7 } }}
+                viewport={{ once: true }}
               >
                 is a practicing lawyer who studied law from University of London and was thereafter called to the Bar Council of England and Wales as a Barrister-at-Law from The Honourable Society of Lincoln’s Inn after successful completion of his Bar Professional Training Course from City University London. He has been enrolled in the Bangladesh Bar Council as an Advocate and subsequently has become an Advocate of Supreme Court of Bangladesh. He had been associated with eminent law firms in Bangladesh such as Syed Ishtiaq Ahmed & Associates, Moudud Ahmed & Associates, Tasmia Prodhan and Associates and The Legal Sanctuary. Currently he is practicing in the High Court Division of the Supreme Court of Bangladesh. He has in depth experience in Civil, Criminal, Banking, Non-Banking Commercial Matters, Company Matters, Income Tax Matters, Family Matters and Arbitration Matters. He has gained vast knowledge of all kinds of drafting and legal vettings and he has been working in the legal arena in different positions for more than 8 (eight) years.
               </motion.p>

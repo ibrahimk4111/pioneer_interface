@@ -62,6 +62,7 @@ const ContactForm = () => {
       variants={variants}
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true }}
     >
       <form
         onSubmit={(e) => formSubmit(e)}

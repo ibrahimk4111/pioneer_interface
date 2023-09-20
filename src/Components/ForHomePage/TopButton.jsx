@@ -23,7 +23,8 @@ const TopButton = () => {
         <div>
             <div className=' fixed bottom-10 right-10 z-50 cursor-pointer'>
                 <BsFillArrowUpCircleFill onClick={backToTop} size={40}
-                    className={` ${isVisible ? "block" : "hidden"} p-2 bg-bg-card text-white hover:scale-125 rounded-full shadow-xl shadow-slate-400 transition-all duration-300 ease-in`} />
+                    className={` ${isVisible ? "block" : "hidden"} p-2 bg-bg-card text-white hover:scale-125 rounded-full shadow-xl shadow-slate-400 transition-all duration-300 ease-in`}
+                />
             </div>
         </div>
     )

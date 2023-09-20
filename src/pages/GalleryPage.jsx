@@ -32,7 +32,8 @@ const GalleryPage = () => {
               key={index}
               variants={variants(index)}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
+              viewport={{ once: true }}
             >
               <Gallery key={index} index={index} img={img} />
             </motion.div>

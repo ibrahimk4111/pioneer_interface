@@ -90,6 +90,7 @@ const NewsPage = () => {
                   variants={variants(index)}
                   initial="hidden"
                   whileInView="visible"
+                  viewport={{ once: true }}
                 >
                   <News news={news} index={index} />
                 </motion.div>
