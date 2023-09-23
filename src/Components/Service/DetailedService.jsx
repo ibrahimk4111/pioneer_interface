@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useParams, Link } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
 import { HiScale } from 'react-icons/hi';
+import DOMPurify from 'dompurify';
 
 const DetailedService = () => {
 
@@ -44,8 +45,8 @@ const DetailedService = () => {
 
       <motion.div
         className=' flex flex-col justify-start gap-10 h-auto border-2 border-slate-300 lg:col-span-2 md:col-span-2 overflow-hidden'
-        initial={{scale: 0, opacity: 0}}
-        animate={{scale: 1, opacity: 1, transition:{duration: 0.5}}}
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1, transition: { duration: 0.5 } }}
       >
         <img className=" object-cover h-80 duration-300 hover:scale-105" src={`${mainUrl}${singleService.img}`} alt='...' />
 
@@ -53,11 +54,17 @@ const DetailedService = () => {
           <h2 className="text-2xl font-bold py-2 bg-slate-50 text-center">{singleService.title}</h2>
           <div>
             <label className=' text-xl font-bold'>Description in short:</label>
-            <h2 className="text-lg font-semibold pr-1 text-justify">{singleService.short_Description}</h2>
+            <h2
+              className="text-lg font-semibold pr-1 text-justify"
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(singleService.short_Description) }}
+            ></h2>
           </div>
           <div className='w-full py-5'>
             <label className='text-xl font-bold'>Description in details:</label>
-            <p className=' text-justify text-lg'>{singleService.full_Description}</p>
+            <p
+              className=' text-justify text-lg'
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(singleService.full_Description) }}
+            ></p>
           </div>
         </div>
       </motion.div>

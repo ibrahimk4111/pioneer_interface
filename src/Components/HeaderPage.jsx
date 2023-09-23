@@ -1,9 +1,8 @@
 import React, { useContext, useState } from "react";
 import { motion } from 'framer-motion'
 import { UserContext } from "./Context/UserContext";
-// import bgImg from '../styles/bg-1.jpg'
 import { Link } from "react-router-dom";
-
+import DOMPurify from "dompurify";
 
 const HeaderPage = () => {
 
@@ -23,8 +22,6 @@ const HeaderPage = () => {
     console.log(newIndex)
   };
 
-
-
   return (
     <>
       {/* start headers data mapping */}
@@ -32,6 +29,7 @@ const HeaderPage = () => {
         {
           headers.map((header, index) => (
             index === current &&
+
             <motion.div
               key={index}
               className="bg-cover bg-center md:h-[90vh] sm:h-[70vh] h-[60vh]"
@@ -47,28 +45,35 @@ const HeaderPage = () => {
                 >
                   <span className="text-2xl font-extrabold text-white">&#8592;</span>
                 </motion.div>
-               
+
                 <div className=" md:px-12 px-5 flex flex-col max-w-[1200px] text-white w-full h-full items-start justify-center ">
                   <motion.p
                     className="md:text-3xl sm:text-2xl text-xl uppercase md:mb-5"
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } }}
                     viewport={{ once: true }}
-                  >Welcome To</motion.p>
-                  
+                  >
+                    {header.title}
+                  </motion.p>
+
                   <motion.p
                     className=" md:text-5xl sm:text-3xl text-xl uppercase tracking-widest font-bold"
                     initial={{ opacity: 0, x: -250 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2, delay: 0.5 } }}
                     viewport={{ once: true }}
-                  >Pioneer Law Associates</motion.p>
-                  
+                  >
+                    {header.Header_Text}
+                  </motion.p>
+
+                  {/* richtext converted to normal */}
                   <motion.p
                     className="lg:w-[70%] my-5 text-justify tracking-wider md:text-lg"
                     initial={{ opacity: 0, x: -500 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
                     viewport={{ once: true }}
-                  >Our law firm understands that every client has unique legal needs. That’s why we provide personalized legal services tailored to your specific situation. Our experienced attorneys will work closely with you to develop a customized legal solution that meets your individual needs and achieves your desired outcomes.</motion.p>
+                    dangerouslySetInnerHTML={{ __html:DOMPurify.sanitize(header.text)}}
+                  >
+                  </motion.p>
 
                   <motion.div
                     className=" mt-5 sm:w-[22%] w-40 flex justify-center items-center border-2 border-bg-card hover:bg-bg-card rounded-md transition hover:scale-105 duration-300 ease-in cursor-pointer"

@@ -9,7 +9,7 @@ import { UserContext } from '../Context/UserContext';
 
 const Attorney = ({ attorney, index }) => {
   // console.log(attorney)
-  const { setDirectoryFalse } = useContext(UserContext)
+  const { setDirectoryFalse, mainUrl } = useContext(UserContext)
 
   return (
     <div className='px-2 flex justify-center items-center '>
@@ -17,7 +17,7 @@ const Attorney = ({ attorney, index }) => {
 
         <div className=' w-full h-[75%] overflow-hidden flex justify-center items-center'>
           <Link to={`/attorney/${attorney.id}`} onClick={setDirectoryFalse} className="w-full h-full">
-            <img className=" object-cover object-top w-full h-full duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${attorney.img}`} alt='...' />
+            <img className=" object-cover object-top w-full h-full duration-300 hover:scale-105" src={`${mainUrl}${attorney.img}`} alt='...' />
           </Link>
         </div>
 

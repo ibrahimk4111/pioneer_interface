@@ -8,39 +8,14 @@ import { Pagination, A11y, Navigation, FreeMode, Autoplay } from 'swiper/modules
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
+import { UserContext } from '../Context/UserContext';
 
 
 
 const NewsPage = () => {
 
-  // useContext hook to retrive data
-  const notes = [
-    {
-      _id: 1,
-      url: 'https://www.rupayangroup.com/wp-content/uploads/2021/07/Rupayan-Group-logo180.png',
-      name: 'Rupayan Group'
-    },
-    {
-      _id: 2,
-      url: 'https://www.rupayangroup.com/wp-content/uploads/2021/07/Rupayan-Group-logo180.png',
-      name: 'Rupayan Group'
-    },
-    {
-      _id: 3,
-      url: 'https://www.rupayangroup.com/wp-content/uploads/2021/07/Rupayan-Group-logo180.png',
-      name: 'Rupayan Group'
-    },
-    {
-      _id: 4,
-      url: 'https://www.rupayangroup.com/wp-content/uploads/2021/07/Rupayan-Group-logo180.png',
-      name: 'Rupayan Group'
-    },
-    {
-      _id: 5,
-      url: 'https://www.rupayangroup.com/wp-content/uploads/2021/07/Rupayan-Group-logo180.png',
-      name: 'Rupayan Group'
-    }
-  ]
+  const { clients, mainUrl } = useContext(UserContext)
+
   const variants = (index) => ({
     hidden: {
       opacity: 0,
@@ -86,19 +61,19 @@ const NewsPage = () => {
             }}
             breakpoints={{
               0: {
-                slidesPerView: 1,
-                spaceBetween: 10
+                slidesPerView: 2,
+                spaceBetween: 5
               },
               640: {
-                slidesPerView: 1,
-                spaceBetween: 7
+                slidesPerView: 2,
+                spaceBetween: 5
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 10
               },
               1024: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 10
               },
               1200: {
@@ -108,18 +83,25 @@ const NewsPage = () => {
             }}
           >
 
-            {notes.map((note, index) => (
+            {clients.map((client, index) => (
 
-              <SwiperSlide key={index} className="px-2 py-10">
+              <SwiperSlide key={index}
+                className="px-2 pt-10"
+              >
                 <motion.div
                   variants={variants(index)}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className='flex flex-col justify-between items-center'
+                  className=' flex flex-col justify-center gap-3 h-52 p-2'
                 >
-                  <img src={note.url} alt="..." />
-                  <h2 className='mt-10 p-2 bg-slate-200 rounded-lg'>{note.name}</h2>
+                  <div className='flex justify-center items-center p-2  border-2 border-slate-200 h-48'>
+                    <img
+                      className=' w-auto max-h-32'
+                      src={`${mainUrl}${client.com_img}`} alt="..."
+                    />
+                  </div>
+                  <h2 className='p-2 bg-slate-200 rounded-lg h-10 text-center'>{client.Company_name}</h2>
                 </motion.div>
               </SwiperSlide>
 

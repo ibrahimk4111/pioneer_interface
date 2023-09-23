@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import smImg from '../../styles/handsome-judge-with-gavel-sitting-courtroom_85869-8507.jpg'
 import { UserContext } from '../Context/UserContext'
+import DOMPurify from 'dompurify'
 
 const News = ({ news }) => {
   
@@ -20,14 +20,17 @@ const News = ({ news }) => {
             <h2 className='line-clamp-2 text-xl p-2'> {news.title}</h2>
           </div>
 
-          <div className=" px-3 py-0 text-gray-600 md:text-base line-clamp-5 text-justify">{news.Description}</div>
+          <div 
+          className=" px-3 py-0 text-gray-600 md:text-base line-clamp-5 text-justify"
+          dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(news.Description)}}
+          ></div>
 
-          <div className=' px-5 py-1 flex items-center justify-between gap-3 border-t-2 border-slate-200'>
+          <div className='px-2 py-1 flex items-center justify-between gap-1 border-t-2 border-slate-200'>
             <div className=' flex gap-1 items-center'>
-              <img src={smImg} alt="..." className=' h-10 w-10 rounded-full' />
-              <h2 className=' text-slate-500'>Md. Nazmul Islam</h2>
+              <img src={`${mainUrl}${news.bloger_img}`} alt="..." className=' h-10 w-10 rounded-full' />
+              <h2 className=' text-sm text-slate-500'>{news.bloger_name}</h2>
             </div>
-            <h2 className=' text-slate-500'>9/6/2023</h2>
+            <h2 className=' text-slate-500'>{news.updated}</h2>
           </div>
 
         </div>

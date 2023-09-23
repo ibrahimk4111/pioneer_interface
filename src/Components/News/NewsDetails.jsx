@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
-import smImg from '../../styles/handsome-judge-with-gavel-sitting-courtroom_85869-8507.jpg';
+import DOMPurify from 'dompurify';
 
 const NewsDetails = () => {
 
-  const { news_and_blogs } = useContext(UserContext)
+  const { news_and_blogs, mainUrl } = useContext(UserContext)
 
   const [news, setNews] = useState({})
   const { id } = useParams()
@@ -43,21 +43,24 @@ const NewsDetails = () => {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1, transition: { duration: 0.5 } }}
       >
-        <img className=" object-cover h-80 duration-300 hover:scale-105" src={`https://pioneer.kodbel.com${news.img}`} alt='...' />
+        <img className=" object-cover h-80 duration-300 hover:scale-105" src={`${mainUrl}${news.img}`} alt='...' />
 
         <div className=" flex flex-col space-y-3 px-5 w-full">
           <h2 className="text-2xl font-bold pr-1">{news.title}</h2>
           <div className='w-full py-5'>
-            <p className=' text-justify text-lg'>{news.Description}</p>
+            <p
+              className=' text-justify text-lg'
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(news.Description) }}
+            ></p>
           </div>
         </div>
 
         <div className=' px-5 py-1 flex items-center justify-between gap-3 border-t-2 border-slate-200'>
           <div className=' flex gap-1 items-center'>
-            <img src={smImg} alt="..." className=' h-10 w-10 rounded-full' />
-            <h2 className=' text-slate-500'>Md. Nazmul Islam</h2>
+            <img src={`${mainUrl}${news.bloger_img}`} alt="..." className=' h-10 w-10 rounded-full' />
+            <h2 className=' text-sm text-slate-500'>{news.bloger_name}</h2>
           </div>
-          <h2 className=' text-slate-500'>9/6/2023</h2>
+          <h2 className=' text-slate-500'>{news.updated}</h2>
         </div>
       </motion.div>
 
@@ -73,6 +76,7 @@ const NewsDetails = () => {
                 variants={variants(index)}
                 initial="hidden"
                 whileInView="visible"
+                viewport={{once: true}}
               >
                 <span className=' p-2'>{item.title}</span>
               </motion.div>

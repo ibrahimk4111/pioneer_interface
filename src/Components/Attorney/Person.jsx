@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom'
 import { BiPhoneCall, BiMailSend } from "react-icons/bi";
 import { CiFacebook, CiLinkedin } from 'react-icons/ci';
 import { FiTwitter } from "react-icons/fi";
+import DOMPurify from 'dompurify';
 
 
 const Person = () => {
 
-  const {mainUrl, attorneys, setDirectoryFalse } = useContext(UserContext)
+  const { mainUrl, attorneys, setDirectoryFalse } = useContext(UserContext)
 
   const [person, setPerson] = useState({})
   const { id } = useParams()
@@ -34,7 +35,10 @@ const Person = () => {
         <div className=" flex flex-col space-y-3 p-3 w-full col-span-2">
           <h2 className="text-2xl font-bold py-2 bg-slate-50 text-center">{person.attr_name}</h2>
           <div className='w-full p-5'>
-            <p className=' text-justify text-lg'>{person.Description}</p>
+            <p
+              className=' text-justify text-lg'
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(person.Description) }}
+            ></p>
           </div>
           <div className=' flex p-2'>
             {/* Phone Call  */}

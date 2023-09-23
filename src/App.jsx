@@ -2,7 +2,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { AnimatePresence } from "framer-motion";
 
-import { TaskProvider } from "./Components/Context/UserContext";
+import { TaskProvider } from "./Components/Context/TaskProvider";
 
 import Home from './Components/Home'
 import Navigationbar from "./pages/Navigationbar";

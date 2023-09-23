@@ -10,7 +10,7 @@ import { UserContext } from "../Context/UserContext";
 
 function NavButton({ children }) {
   // tailwind css
-  const classNames = ' lg:text-xl text-lg p-2 font-semibold hover:bg-[#ce940049] rounded-md transition duration-500'
+  const classNames = ' text-lg p-2 font-semibold hover:bg-[#ce940049] rounded-md transition duration-500'
   return (
     <motion.button
       className={classNames}
