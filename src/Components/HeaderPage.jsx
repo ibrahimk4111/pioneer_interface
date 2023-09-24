@@ -50,7 +50,7 @@ const HeaderPage = () => {
                   <motion.p
                     className="lg:text-3xl md:text-2xl sm:text-xl text-base uppercase md:mb-5"
                     initial={{ opacity: 0, x: -100 }}
-                    whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } }}
+                    whileInView={{ opacity: 1, x: 0, transition: { duration: 1, delay: 0.7 } }}
                     viewport={{ once: true }}
                   >
                     {header.title}
@@ -59,21 +59,21 @@ const HeaderPage = () => {
                   <motion.p
                     className="lg:text-5xl md:text-4xl sm:text-3xl text-xl uppercase tracking-widest font-bold"
                     initial={{ opacity: 0, x: -250 }}
-                    whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2, delay: 0.5 } }}
+                    whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2, delay: 0.2 } }}
                     viewport={{ once: true }}
                   >
                     {header.Header_Text}
                   </motion.p>
 
                   {/* richtext converted to normal */}
-                  <motion.div
+                  <p
                     className="lg:w-[70%] md:w-[80%] w-[100%] text-justify md:text-lg"
-                    initial={{ opacity: 0, x: -500 }}
-                    whileInView={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
-                    viewport={{ once: true }}
+                    // initial={{ opacity: 0, x: -500 }}
+                    // whileInView={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
+                    // viewport={{ once: true }}
                     dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(header.text) }}
                   >
-                  </motion.div>
+                  </p>
 
                   <motion.div
                     className="w-40 transition hover:scale-105 duration-300 ease-in flex justify-center items-center border-2 border-bg-card hover:bg-bg-card hover:text-white bg-opacity-75 rounded-md cursor-pointer"
