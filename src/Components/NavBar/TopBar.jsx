@@ -39,13 +39,13 @@ const TopBar = () => {
           {/* Phone Call  */}
           <div className="flex items-center text-white">
             <BiPhoneCall size={20} />
-            <Link to="/" className="px-1 md:px-3 ">01711-108120 </Link>
+            <Link to="/" className="px-1 md:px-3 sm:text-lg text-sm">01711-108120 </Link>
           </div>
 
           {/* Email  */}
           <div className="flex items-center text-white">
             <BiMailSend size={20} />
-            <Link to="/" className="px-1 md:px-3">admozibur@gmail.com </Link>
+            <Link to="/" className="px-1 md:px-3 sm:text-lg text-sm">admozibur@gmail.com </Link>
           </div>
         </div>
 
@@ -65,7 +65,7 @@ const TopBar = () => {
           </div>
 
           {/* appointment */}
-          <Link to="/appointment" className=" md:hidden px-2 py-1 border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
+          <Link to="/appointment" className=" sm:text-lg text-sm md:hidden px-2 py-1 border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
             Book Appointment
           </Link>
         </div>

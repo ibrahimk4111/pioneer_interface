@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { motion } from 'framer-motion'
 import { UserContext } from "./Context/UserContext";
 import { Link } from "react-router-dom";
-import DOMPurify from "dompurify";
+// import DOMPurify from "dompurify";
 
 const HeaderPage = () => {
 
@@ -32,7 +32,7 @@ const HeaderPage = () => {
 
             <motion.div
               key={index}
-              className="bg-cover bg-center md:h-[90vh] sm:h-[70vh] h-[60vh]"
+              className="bg-cover bg-center md:h-[90vh] h-[75vh]"
               style={{ backgroundImage: `url(${mainUrl}${header.img})` }}
               initial={{ opacity: 0.5 }}
               whileInView={{ opacity: 1, transition: { duration: 3 } }}
@@ -46,9 +46,9 @@ const HeaderPage = () => {
                   <span className="text-2xl font-extrabold text-white">&#8592;</span>
                 </motion.div>
 
-                <div className=" md:px-12 px-5 flex flex-col max-w-[1200px] text-white w-full h-full items-start justify-center ">
+                <div className=" md:px-12 px-5 max-w-[1200px] text-white w-full h-full flex flex-col items-start justify-center gap-5">
                   <motion.p
-                    className="md:text-3xl sm:text-2xl text-xl uppercase md:mb-5"
+                    className="lg:text-3xl md:text-2xl sm:text-xl text-base uppercase md:mb-5"
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } }}
                     viewport={{ once: true }}
@@ -57,7 +57,7 @@ const HeaderPage = () => {
                   </motion.p>
 
                   <motion.p
-                    className=" md:text-5xl sm:text-3xl text-xl uppercase tracking-widest font-bold"
+                    className="lg:text-5xl md:text-4xl sm:text-3xl text-xl uppercase tracking-widest font-bold"
                     initial={{ opacity: 0, x: -250 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2, delay: 0.5 } }}
                     viewport={{ once: true }}
@@ -67,22 +67,23 @@ const HeaderPage = () => {
 
                   {/* richtext converted to normal */}
                   <motion.p
-                    className="lg:w-[70%] my-5 text-justify tracking-wider md:text-lg"
+                    className="lg:w-[70%] text-justify md:text-lg"
                     initial={{ opacity: 0, x: -500 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
                     viewport={{ once: true }}
-                    dangerouslySetInnerHTML={{ __html:DOMPurify.sanitize(header.text)}}
+                    // dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(header.text) }}
                   >
+                    {header.text}
                   </motion.p>
 
                   <motion.div
-                    className=" mt-5 sm:w-[22%] w-40 flex justify-center items-center border-2 border-bg-card hover:bg-bg-card rounded-md transition hover:scale-105 duration-300 ease-in cursor-pointer"
+                    className="w-40 transition hover:scale-105 duration-300 ease-in-out flex justify-center items-center border-2 border-white hover:bg-white hover:text-black bg-opacity-75 rounded-md cursor-pointer"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 1.2 } }}
                     viewport={{ once: true }}
                   >
-                    <Link to="/contact" className="p-1 md:text-xl text-sm uppercase">
-                      Contact us
+                    <Link to="/contact" className="p-1 text-sm">
+                      Contact Us
                     </Link>
                   </motion.div>
                 </div>
