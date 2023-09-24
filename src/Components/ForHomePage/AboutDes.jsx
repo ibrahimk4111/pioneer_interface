@@ -26,7 +26,7 @@ const AboutDes = () => {
     },
     {
       id: "05",
-      text: "Huge amount of Lawyer"
+      text: "Amount of Lawyers"
     },
     {
       id: "06",
@@ -67,20 +67,20 @@ const AboutDes = () => {
             >
             </motion.p>
 
-            <div className=' grid md:grid-cols-3 grid-cols-2 px-2 gap-3 pb-10'>
+            <div className=' grid md:grid-cols-3 grid-cols-2 px-1 gap-3 pb-10'>
               {
                 categories.map((categorie, index) => (
                   <motion.div
                     key={index}
-                    className='flex items-center bg-[#fff2ce] p-2'
+                    className='flex items-center bg-[#fff2ce]'
                     variants={variants(index)}
                     initial="hidden"
                     whileInView="visible"
                     custom={index}
                     viewport={{ once: true }}
                   >
-                    <h2 className='text-lg md:px-2 px-1 border-r-2 border-slate-400'>{categorie.id}</h2>
-                    <h3 className='md:text-lg text-base md:px-2 px-1'>{categorie.text}</h3>
+                    <h2 className='md:text-lg text-sm border-r-2 border-slate-400 p-2'>{categorie.id}</h2>
+                    <h3 className='md:text-lg text-sm p-2'>{categorie.text}</h3>
                   </motion.div>
                 ))
               }
