@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { motion } from 'framer-motion'
 import { UserContext } from "./Context/UserContext";
 import { Link } from "react-router-dom";
-import DOMPurify from "dompurify";
+// import DOMPurify from "dompurify";
 
 const HeaderPage = () => {
 
@@ -71,8 +71,9 @@ const HeaderPage = () => {
                     initial={{ opacity: 0, x: -500 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
                     viewport={{ once: true }}
-                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(header.text) }}
+                    // dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(header.text) }}
                   >
+                    {header.text}
                   </motion.div>
 
                   <motion.div
