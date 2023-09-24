@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { motion } from 'framer-motion'
 import { UserContext } from "./Context/UserContext";
 import { Link } from "react-router-dom";
-// import DOMPurify from "dompurify";
+import DOMPurify from "dompurify";
 
 const HeaderPage = () => {
 
@@ -67,17 +67,16 @@ const HeaderPage = () => {
 
                   {/* richtext converted to normal */}
                   <motion.div
-                    className="lg:w-[70%] text-justify md:text-lg"
+                    className="lg:w-[70%] md:w-[80%] w-[100%] text-justify md:text-lg"
                     initial={{ opacity: 0, x: -500 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
                     viewport={{ once: true }}
-                    // dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(header.text) }}
+                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(header.text) }}
                   >
-                    {header.text}
                   </motion.div>
 
                   <motion.div
-                    className="w-40 transition hover:scale-105 duration-300 ease-in-out flex justify-center items-center border-2 border-white hover:bg-white hover:text-black bg-opacity-75 rounded-md cursor-pointer"
+                    className="w-40 transition hover:scale-105 duration-300 ease-in flex justify-center items-center border-2 border-bg-card hover:bg-bg-card hover:text-white bg-opacity-75 rounded-md cursor-pointer"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 1.2 } }}
                     viewport={{ once: true }}
