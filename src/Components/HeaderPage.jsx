@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { motion } from 'framer-motion'
 import { UserContext } from "./Context/UserContext";
 import { Link } from "react-router-dom";
-// import DOMPurify from "dompurify";
+import DOMPurify from "dompurify";
 
 const HeaderPage = () => {
 
@@ -46,7 +46,7 @@ const HeaderPage = () => {
                   <span className="text-2xl font-extrabold text-white">&#8592;</span>
                 </motion.div>
 
-                <div className=" md:px-12 px-5 max-w-[1200px] text-white w-full h-full flex flex-col items-start justify-center gap-5">
+                <motion.div className=" md:px-12 px-5 max-w-[1200px] text-white w-full h-full flex flex-col items-start justify-center gap-5">
                   <motion.p
                     className="lg:text-3xl md:text-2xl sm:text-xl text-base uppercase md:mb-5"
                     initial={{ opacity: 0, x: -100 }}
@@ -66,15 +66,14 @@ const HeaderPage = () => {
                   </motion.p>
 
                   {/* richtext converted to normal */}
-                  <motion.p
+                  <motion.div
                     className="lg:w-[70%] text-justify md:text-lg"
                     initial={{ opacity: 0, x: -500 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 1.5, delay: 1 } }}
                     viewport={{ once: true }}
-                    // dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(header.text) }}
+                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(header.text) }}
                   >
-                    {header.text}
-                  </motion.p>
+                  </motion.div>
 
                   <motion.div
                     className="w-40 transition hover:scale-105 duration-300 ease-in-out flex justify-center items-center border-2 border-white hover:bg-white hover:text-black bg-opacity-75 rounded-md cursor-pointer"
@@ -86,7 +85,7 @@ const HeaderPage = () => {
                       Contact Us
                     </Link>
                   </motion.div>
-                </div>
+                </motion.div>
 
                 <motion.div
                   className=" cursor-pointer border-2 border-white rounded-full w-10 h-10 flex justify-center items-center transition hover:scale-110 duration-300"
