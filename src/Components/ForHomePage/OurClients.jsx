@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { motion } from 'framer-motion'
 // import { UserContext } from '../Components/Context/UserContext';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,21 +14,6 @@ import { UserContext } from '../Context/UserContext';
 const NewsPage = () => {
 
   const { clients, mainUrl } = useContext(UserContext)
-
-  const variants = (index) => ({
-    hidden: {
-      opacity: 0,
-      x: -200
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        delay: 0.2 * index,
-        duration: 1
-      }
-    }
-  })
 
   return (
     <div className="bg-slate-100 py-10" id='client'>
@@ -86,15 +70,9 @@ const NewsPage = () => {
             {clients.map((client, index) => (
 
               <SwiperSlide key={index}
-                className="px-2 pt-10"
+                className="py-10"
               >
-                <motion.div
-                  variants={variants(index)}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className=' flex flex-col justify-center gap-3 h-52 p-2'
-                >
+                <div className=' flex flex-col justify-center gap-3 h-52 p-2'>
                   <div className='flex justify-center items-center p-2  border-2 border-slate-200 h-48'>
                     <img
                       className=' w-auto max-h-32'
@@ -102,7 +80,7 @@ const NewsPage = () => {
                     />
                   </div>
                   <h2 className='p-2 bg-slate-200 rounded-lg h-10 text-center'>{client.Company_name}</h2>
-                </motion.div>
+                </div>
               </SwiperSlide>
 
             ))}
