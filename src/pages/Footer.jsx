@@ -85,7 +85,7 @@ const Footer = () => {
         </div>
 
         {/* copyright reserved */}
-        <div className="mt-5 flex justify-between">
+        <div className="mt-5 flex md:flex-row flex-col justify-between">
           <p className=" text-sm">
             &copy; All Rights Reserved to <Link to='/' className="text-yellow-600">PIONEER LAW ASSOCIATES</Link>
           </p>
