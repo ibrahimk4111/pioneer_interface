@@ -90,7 +90,7 @@ const Footer = () => {
             &copy; All Rights Reserved to <Link to='/' className="text-yellow-600">PIONEER LAW ASSOCIATES</Link>
           </p>
 
-          <p className="text-[2px]">
+          <p className=" text-xs">
             Designed and Developed by <Link to='https://github.com/ibrahimk4111' target="_blank" className="text-yellow-800">Md. Ibrahim Khalil</Link>
           </p>
         </div>
