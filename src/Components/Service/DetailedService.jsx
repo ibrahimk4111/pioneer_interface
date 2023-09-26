@@ -81,6 +81,7 @@ const DetailedService = () => {
                 variants={variants(index)}
                 initial="hidden"
                 whileInView="visible"
+                viewport={{once:true}}
               >
                 <span className='bg-bg-card text-white p-2'><HiScale /></span>
                 <span className=' p-2'>{item.title}</span>

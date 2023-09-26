@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import {motion} from 'framer-motion'
 import { useParams } from 'react-router-dom'
 import { UserContext } from '../Context/UserContext'
 import { Link } from 'react-router-dom'
@@ -23,6 +24,26 @@ const Person = () => {
     }
     getAttorney()
   }, [id, mainUrl])
+
+
+
+  const variants = (index) => ({
+    hidden: {
+      opacity: 0,
+      x: 100
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.2 * index,
+        duration: 1
+      }
+    }
+  })
+
+
+
 
   return (
     <div className="max-w-[1200px] mx-auto h-auto md:py-10 py-5 grid md:grid-cols-4 grid-cols-1 gap-5 ">
@@ -76,10 +97,16 @@ const Person = () => {
         {
           attorneys.map((person, index) => (
             <Link key={index} to={`/attorney/${person.id}`} onClick={setDirectoryFalse} className='active:bg-bg-card focus:text-white focus:bg-bg-card bg-slate-50'>
-              <div className='w-full flex items-center gap-5'>
+              <motion.div
+                className='w-full flex items-center gap-5'
+                variants={variants(index)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
                 <img className=" object-cover object-top w-12 h-12" src={`${mainUrl}${person.img}`} alt='...' />
                 <p className='text-lg p-2'>{person.attr_name}</p>
-              </div>
+              </motion.div>
             </Link>
 
           ))
