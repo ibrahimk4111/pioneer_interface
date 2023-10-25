@@ -25,12 +25,10 @@ export const TaskProvider = ({ children }) => {
 
   const setDirectoryFalse = () => {
     setSerivceDirectory(false);
-    console.log(serviceDirectory);
   };
 
   const DirectoryTrue = () => {
     setSerivceDirectory(true);
-    console.log(serviceDirectory);
   };
   // End Navigation Section
 
@@ -56,8 +54,9 @@ export const TaskProvider = ({ children }) => {
   const [services, setServices] = useState([]);
   useEffect(() => {
     getDatas('/api/service/', setServices);
-  }, [services]);
+  }, []);
   // End Services Sections data
+  
   // Start news and blogs Section data
   const [news_and_blogs, setNews_and_blogs] = useState([]);
   useEffect(() => {

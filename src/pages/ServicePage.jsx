@@ -9,6 +9,7 @@ const ServicePage = () => {
 
   // useContext hook to call data
   const { services } = useContext(UserContext)
+  services.sort((a,b)=>a.id-b.id)
 
   const variants = (index) => ({
     hidden: {

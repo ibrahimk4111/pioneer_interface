@@ -17,6 +17,8 @@ import 'swiper/css/free-mode';
 const AttorneyPage = () => {
 
   const { attorneys } = useContext(UserContext)
+  attorneys.sort((a,b)=>a.id-b.id)
+
   const variants = (index) => ({
     hidden: {
       opacity: 0,

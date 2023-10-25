@@ -16,6 +16,8 @@ const NewsPage = () => {
 
   // useContext hook to retrive data
   const { news_and_blogs } = useContext(UserContext)
+  news_and_blogs.sort((a,b)=>b.id-a.id)
+
   const variants = (index) => ({
     hidden: {
       opacity: 0,
