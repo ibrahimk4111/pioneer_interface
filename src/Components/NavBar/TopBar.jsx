@@ -40,13 +40,13 @@ const TopBar = () => {
             {/* Phone Call  */}
             <div className="flex items-center text-white">
               <BiPhoneCall size={20} />
-              <Link to="/" className="px-1 md:px-3 sm:text-lg text-sm">01711-108120 </Link>
+              <Link to="/" className="px-1 md:px-3 text-sm">01711-108120 </Link>
             </div>
 
             {/* Email  */}
             <div className="flex items-center text-white">
               <BiMailSend size={20} />
-              <Link to="/" className="px-1 md:px-3 sm:text-lg text-sm">admozibur@gmail.com </Link>
+              <Link to="/" className="px-1 md:px-3 text-sm">admozibur@gmail.com </Link>
             </div>
           </div>
 
@@ -58,7 +58,7 @@ const TopBar = () => {
                 <CiFacebook className=" text-white text-xl  transition hover:scale-110 duration-300 ease-in-out" />
               </Link>
               <Link to="https://www.linkedin.com/" target="_blank">
-                <CiLinkedin className=" text-white text-2xl  transition hover:scale-110 duration-300 ease-in-out" />
+                <CiLinkedin className=" text-white text-xl  transition hover:scale-110 duration-300 ease-in-out" />
               </Link>
               <Link to="https://www.twitter.com/" target="_blank">
                 <FiTwitter className=" transition hover:scale-110 duration-300 ease-in-out text-white text-xl" />
@@ -66,7 +66,7 @@ const TopBar = () => {
             </div>
 
             {/* appointment */}
-            <Link to="/appointment" className=" sm:text-lg text-sm md:hidden px-2 py-1 border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
+            <Link to="/appointment" className=" text-sm md:hidden px-2 py-1 border-2 border-white hover:scale-105 transition duration-300 rounded-md text-white">
               Book Appointment
             </Link>
           </div>

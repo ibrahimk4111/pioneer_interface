@@ -18,7 +18,7 @@ const Service = ({ service, index }) => {
           <div className="p-5">
             <h2 className=" text-lg md:text-xl font-bold mb-2">{service.title}</h2>
             <p
-              className="text-base line-clamp-5 text-justify"
+              className="text-sm line-clamp-5 text-justify"
               dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(service.short_Description) }}
             ></p>
           </div>

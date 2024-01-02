@@ -10,14 +10,13 @@ import { UserContext } from "../Context/UserContext";
 
 function NavButton({ children }) {
   // tailwind css
-  const classNames = ' text-base p-2 hover:bg-[#ce940049] rounded-md transition duration-300 ease-in uppercase'
+  const classNames = ' text-sm px-2 rounded-md transition duration-300 ease-in uppercase hover:bg-[#ce940049] '
   return (
-    <motion.button
+    <motion
       className={classNames}
-      whileHover={{ scale: 1.1 }}
     >
       {children}
-    </motion.button>
+    </motion>
   );
 }
 
@@ -46,15 +45,15 @@ const NavBar = () => {
 
   return (
     <div >
-      <motion.div className="py-2 container mx-auto"
+      <motion.div className=" container mx-auto"
         variants={variants}
         initial="hidden"
         whileInView="visible"
       >
 
-        <motion.div className="px-6 py-4 flex justify-between items-center">
+        <motion.div className="p-2 flex justify-between items-center">
           <Link to="/" onClick={DirectoryTrue} className=" cursor-pointer"> <img src={logo} alt="..." className="w-32" /> </Link>
-          <motion.div className="hidden md:flex items-center space-x-6 " >
+          <motion.div className="hidden md:flex items-center gap-2" >
 
             <Link to='/' onClick={DirectoryTrue}>
               <NavButton> Home </NavButton>
