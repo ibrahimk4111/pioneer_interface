@@ -27,7 +27,7 @@ const ServicePage = () => {
   })
 
   return (
-    <div className=" py-10" id="services">
+    <div className=" py-10 container mx-auto" id="services">
 
       {/* start header of services section */}
       <div className="flex flex-col justify-center items-center font-serif">
@@ -37,7 +37,7 @@ const ServicePage = () => {
       </div>
 
       {/* start card data mapping  */}
-      <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-5 max-w-[1240px] mx-auto">
+      <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5">
         {services.map((service, index) => (
           index <= 7 &&
             <motion.div

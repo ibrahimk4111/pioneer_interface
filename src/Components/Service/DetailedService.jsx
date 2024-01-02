@@ -41,10 +41,10 @@ const DetailedService = () => {
 
 
   return (
-    <div className="max-w-[1200px] mx-auto h-auto md:py-10 py-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-2">
+    <div className="h-auto lg:py-10 py-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-2">
 
       <motion.div
-        className=' flex flex-col justify-start gap-10 h-auto border-2 border-slate-300 lg:col-span-2 md:col-span-2 overflow-hidden'
+        className=' flex flex-col justify-start gap-10 h-auto border-2 border-slate-300 lg:col-span-2 overflow-hidden'
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1, transition: { duration: 0.5 } }}
       >

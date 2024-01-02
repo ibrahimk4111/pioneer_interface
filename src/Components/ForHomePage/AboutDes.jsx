@@ -73,15 +73,15 @@ const AboutDes = () => {
                   categories.map((categorie, index) => (
                     <motion.div
                       key={index}
-                      className='flex items-center bg-[#fff2ce]'
+                      className='flex items-center'
                       variants={variants(index)}
                       initial="hidden"
                       whileInView="visible"
                       custom={index}
-                      viewport={{ once: true }}
+                      // viewport={{ once: true }}
                     >
-                      <h2 className=' text-sm border-r-2 border-slate-400 p-2'>{categorie.id}</h2>
-                      <h3 className=' text-sm p-2'>{categorie.text}</h3>
+                      <h2 className=' text-sm border-r-2 border-slate-200 p-1'>{categorie.id}</h2>
+                      <h3 className=' text-sm p-1'>{categorie.text}</h3>
                     </motion.div>
                   ))
                 }
@@ -101,7 +101,7 @@ const AboutDes = () => {
 
               <div className=' lg:col-span-5'>
                 <motion.h2
-                  className=' lg:text-3xl text-xl text-blue-950 uppercase border-b-2 border-slate-200 text-center'
+                  className=' lg:text-3xl text-xl text-blue-950 uppercase text-center underline underline-offset-4'
                   initial={{ scale: 0.7, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1, transition: { duration: 1, type: "tween", delay: 0.5 } }}
                   viewport={{ once: true }}

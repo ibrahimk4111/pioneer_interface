@@ -10,7 +10,7 @@ import { UserContext } from "../Context/UserContext";
 
 function NavButton({ children }) {
   // tailwind css
-  const classNames = ' text-sm px-2 rounded-md transition duration-300 ease-in uppercase hover:bg-[#ce940049] '
+  const classNames = ' text-sm uppercase '
   return (
     <motion
       className={classNames}
@@ -55,23 +55,23 @@ const NavBar = () => {
           <Link to="/" onClick={DirectoryTrue} className=" cursor-pointer"> <img src={logo} alt="..." className="w-32" /> </Link>
           <motion.div className="hidden md:flex items-center gap-2" >
 
-            <Link to='/' onClick={DirectoryTrue}>
+            <Link className="hover:bg-[#ce940049] p-1 rounded-md" to='/' onClick={DirectoryTrue} >
               <NavButton> Home </NavButton>
             </Link>
 
             {
               serviceDirectory ?
                 (<>
-                  <Link to='#services'>
+                  <Link className="hover:bg-[#ce940049] p-1 rounded-md transition duration-300 ease-in" to='#services'>
                     <NavButton>Services</NavButton>
                   </Link>
-                  <Link smooth to='#attorneys'>
+                  <Link className="hover:bg-[#ce940049] p-1 rounded-md transition duration-300 ease-in" smooth to='#attorneys'>
                     <NavButton>Attorneys</NavButton>
                   </Link>
-                  <Link smooth to='#news'>
+                  <Link className="hover:bg-[#ce940049] p-1 rounded-md transition duration-300 ease-in" smooth to='#news'>
                     <NavButton>News & Blogs</NavButton>
                   </Link>
-                  <Link smooth to='#client'>
+                  <Link className="hover:bg-[#ce940049] p-1 rounded-md transition duration-300 ease-in" smooth to='#client'>
                     <NavButton>Clients</NavButton>
                   </Link>
                 </>
@@ -93,15 +93,15 @@ const NavBar = () => {
                 )
             }
 
-            <Link to='/gallery' onClick={setDirectoryFalse}>
+            <Link to='/gallery' onClick={setDirectoryFalse} className="hover:bg-[#ce940049] p-1 rounded-md transition duration-300 ease-in">
               <NavButton>Gallery</NavButton>
             </Link>
 
-            <Link to='/contact' onClick={setDirectoryFalse}>
+            <Link to='/contact' onClick={setDirectoryFalse} className="hover:bg-[#ce940049] p-1 rounded-md transition duration-300 ease-in">
               <NavButton>Contact Us</NavButton>
             </Link>
             {/* appointment */}
-            <Link to="/appointment" onClick={setDirectoryFalse} >
+            <Link to="/appointment" onClick={setDirectoryFalse} className="hover:bg-[#ce940049] p-1 rounded-md transition duration-300 ease-in">
               <NavButton>Book Appointment</NavButton>
             </Link>
 
