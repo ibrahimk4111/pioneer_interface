@@ -10,7 +10,7 @@ import { UserContext } from "../Context/UserContext";
 
 function NavButton({ children }) {
   // tailwind css
-  const classNames = ' text-lg p-2 font-semibold hover:bg-[#ce940049] rounded-md transition duration-500'
+  const classNames = ' text-base p-2 hover:bg-[#ce940049] rounded-md transition duration-300 ease-in uppercase'
   return (
     <motion.button
       className={classNames}
@@ -45,8 +45,8 @@ const NavBar = () => {
   }
 
   return (
-    <>
-      <motion.div className="py-2"
+    <div >
+      <motion.div className="py-2 container mx-auto"
         variants={variants}
         initial="hidden"
         whileInView="visible"
@@ -149,7 +149,7 @@ const NavBar = () => {
 
 
       </motion.div>
-    </>
+    </div>
 
   );
 };

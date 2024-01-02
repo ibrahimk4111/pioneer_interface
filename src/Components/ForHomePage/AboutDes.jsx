@@ -51,7 +51,7 @@ const AboutDes = () => {
 
 
   return (
-    <div className=' bg-slate-100 py-10'>
+    <div className=' bg-slate-100 py-10 </div>'>
       {abouts.map((about, index) => (
         <div key={index} className=' max-w-[1200px] mx-auto'>
           <div className="flex flex-col justify-center items-center">
