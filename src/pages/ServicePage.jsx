@@ -37,7 +37,7 @@ const ServicePage = () => {
       </div>
 
       {/* start card data mapping  */}
-      <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-3 ">
+      <div className=" columns-5 gap-3 mt-5">
         {services.map((service, index) => (
           index <= 7 &&
             <motion.div
