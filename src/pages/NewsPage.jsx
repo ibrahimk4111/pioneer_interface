@@ -69,19 +69,19 @@ const NewsPage = () => {
                 spaceBetween: 7
               },
               768: {
-                slidesPerView: 2.2,
+                slidesPerView: 3.2,
                 spaceBetween: 10
               },
               1024: {
-                slidesPerView: 3.3,
+                slidesPerView: 4.3,
                 spaceBetween: 10
               },
               1200: {
-                slidesPerView: 3.3,
+                slidesPerView: 4.3,
                 spaceBetween: 10
               }
             }}
-
+            className=' p-4 '
           >
 
             {news_and_blogs.map((news, index) => (

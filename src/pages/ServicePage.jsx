@@ -37,7 +37,7 @@ const ServicePage = () => {
       </div>
 
       {/* start card data mapping  */}
-      <div className=" columns-5 gap-3 mt-5">
+      <div className=" grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-3 mt-5 p-4">
         {services.map((service, index) => (
           index <= 7 &&
             <motion.div
@@ -54,8 +54,8 @@ const ServicePage = () => {
 
       {/* view all button */}
       <div className="flex justify-center items-center mt-10">
-        <div className="flex justify-center items-center border-2 border-bg-card hover:bg-bg-card hover:text-white rounded-md transition hover:scale-110 duration-300 ease-in cursor-pointer">
-          <Link to={`/detailed_service/${1}`} className="px-5 text-base">
+        <div className="flex justify-center items-center bg-slate-200 hover:bg-bg-card hover:text-white rounded-md transition duration-300 ease-in cursor-pointer">
+          <Link to={`/detailed_service/${1}`} className="p-2 text-sm">
             View All
           </Link>
         </div>
