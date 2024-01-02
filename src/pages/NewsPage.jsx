@@ -35,7 +35,7 @@ const NewsPage = () => {
 
   return (
     <div className="bg-slate-100 py-5" id='news'>
-      <div className=''>
+      <div className=' container mx-auto '>
 
         {/* start header of blog section */}
         <div className="flex flex-col justify-center items-center font-serif">
