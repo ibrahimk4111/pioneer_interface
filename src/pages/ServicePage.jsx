@@ -27,7 +27,7 @@ const ServicePage = () => {
   })
 
   return (
-    <div className=" py-10 container mx-auto" id="services">
+    <div className=" py-5 container mx-auto" id="services">
 
       {/* start header of services section */}
       <div className="flex flex-col justify-center items-center font-serif">
@@ -53,7 +53,7 @@ const ServicePage = () => {
       </div>
 
       {/* view all button */}
-      <div className="flex justify-center items-center mt-10">
+      <div className="flex justify-center items-center mt-5">
         <div className="flex justify-center items-center bg-slate-200 hover:bg-bg-card hover:text-white rounded-md transition duration-300 ease-in cursor-pointer">
           <Link to={`/detailed_service/${1}`} className="p-2 text-sm">
             View All

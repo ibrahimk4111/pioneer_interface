@@ -34,7 +34,7 @@ const NewsPage = () => {
   })
 
   return (
-    <div className="bg-slate-100 py-10" id='news'>
+    <div className="bg-slate-100 py-5" id='news'>
       <div className=''>
 
         {/* start header of blog section */}
@@ -86,7 +86,7 @@ const NewsPage = () => {
 
             {news_and_blogs.map((news, index) => (
 
-              <SwiperSlide key={index} className=" pt-5 pb-10">
+              <SwiperSlide key={index} className=" pt-5 pb-10 ">
                 <motion.div
                   
                   variants={variants(index)}
